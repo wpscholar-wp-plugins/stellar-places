@@ -1,0 +1,63 @@
+<div class="stellar-places-info-window">
+
+	<div class="stellar-places-info-window-header">
+		<h2><a href="<%= url %>"><%= name %></a></h2>
+	</div>
+
+	<div class="stellar-places-info-window-body">
+
+		<% if( image ) { %>
+		<div class="stellar-places-info-window-thumbnail">
+			<a href="<%= url %>"><img src="<%= image %>" /></a>
+		</div>
+		<% } %>
+
+		<% if( description ) { %>
+		<p><%= description %></p>
+		<% } %>
+
+	</div>
+
+	<div class="stellar-places-info-window-footer">
+
+		<span class="stellar-places-postal-address inline">
+
+			<span class="postal-address" itemscope itemtype="http://schema.org/PostalAddress">
+
+				<% if( streetAddress ) { %>
+				<span class="street-address">
+					<span itemprop="streetAddress"><%= streetAddress %></span><span class="delimiter">,</span>
+				</span>
+				<% } %>
+
+				<% if( addressLocality ) { %>
+				<span class="locality">
+					<span itemprop="addressLocality"><%= addressLocality %></span><span class="delimiter">,</span>
+				</span>
+				<% } %>
+
+				<% if( addressRegion ) { %>
+				<span class="region">
+					<span itemprop="addressRegion"><%= addressRegion %></span><span class="delimiter">,</span>
+				</span>
+				<% } %>
+
+				<% if( postalCode ) { %>
+				<span class="postal-code">
+					<span itemprop="postalCode"><%= postalCode %></span><span class="delimiter">,</span>
+				</span>
+				<% } %>
+
+				<% if( addressCountry ) { %>
+				<span class="country">
+					<span itemprop="addressCountry"><%= addressCountry %></span>
+				</span>
+				<% } %>
+
+			</span>
+
+		</span>
+
+	</div>
+
+</div>

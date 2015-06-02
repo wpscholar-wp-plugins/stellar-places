@@ -1,0 +1,313 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Stellar Places\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: Sat Aug 30 2014 09:24:01 GMT+0200 (CEST)\n"
+"PO-Revision-Date: Sat Aug 30 2014 10:03:26 GMT+0200 (CEST)\n"
+"Last-Translator: Jacques SOULE <jsoule2010@gmail.com>\n"
+"Language-Team: \n"
+"Language: French\n"
+"Plural-Forms: nplurals=2; plural=n > 1\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
+"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
+"_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
+"esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
+"esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
+"X-Loco-Target-Locale: fr_FR\n"
+"X-Generator: Loco - https://localise.biz/"
+
+#: /includes/plugin-check.php:122
+#, php-format
+msgid "%s requires PHP version %s or later. You are currently running version %s."
+msgstr ""
+"%s\n"
+" \n"
+"requiert\n"
+" \n"
+"PHP\n"
+" \n"
+"version\n"
+" \n"
+"%s\n"
+" \n"
+"ou\n"
+" \n"
+"supérieure\n"
+".\n"
+" \n"
+"Vous\n"
+" \n"
+"utilisez\n"
+" \n"
+"actuellement\n"
+" la \n"
+"version\n"
+" \n"
+"%s\n"
+"."
+
+#: /includes/plugin-check.php:127
+msgid " Please contact your web host about upgrading PHP."
+msgstr ""
+"Contactez\n"
+" \n"
+"votre\n"
+" \n"
+"hébergeur\n"
+" \n"
+"pour\n"
+" \n"
+"la mise à niveau\n"
+" de \n"
+"PHP\n"
+".\n"
+
+#: /includes/plugin-check.php:142
+#, php-format
+msgid "%s requires the %s PHP extension."
+msgstr ""
+"%s\n"
+" \n"
+"nécessite\n"
+" \n"
+"l'extension\n"
+" \n"
+"PHP\n"
+" de \n"
+"%s\n"
+"."
+
+#: /includes/plugin-check.php:160
+#, php-format
+msgid ""
+"%s requires WordPress version %s or later. You are currently running version "
+"%s."
+msgstr ""
+"%s\n"
+" \n"
+"requiert\n"
+" \n"
+"WordPress\n"
+" \n"
+"version\n"
+" \n"
+"%s\n"
+" \n"
+"ou\n"
+" \n"
+"supérieure\n"
+".\n"
+" \n"
+"Vous\n"
+" \n"
+"utilisez\n"
+" \n"
+"actuellement\n"
+" la \n"
+"version\n"
+" \n"
+"%s\n"
+"."
+
+#: /includes/plugin-check.php:197
+#, php-format
+msgid "<p>The <strong>%s</strong> plugin has been deactivated.</p>"
+msgstr ""
+"<p>\n"
+"Le\n"
+" \n"
+"plugin\n"
+" <strong>\n"
+"%s\n"
+"</strong> \n"
+"a\n"
+" \n"
+"été\n"
+" \n"
+"désactivé\n"
+".\n"
+"</p>"
+
+#: /includes/meta-boxes/meta-box-model.php:101
+msgid "Meta box HTML id must be a string"
+msgstr ""
+"L'Id\n"
+" \n"
+"HTML\n"
+" de la section \n"
+"Meta\n"
+" \n"
+"doit\n"
+" \n"
+"être\n"
+" \n"
+"une\n"
+" \n"
+"chaîne de caractères"
+
+#: /includes/meta-boxes/meta-box-model.php:104
+msgid "Meta box title must be a string"
+msgstr "Le titre de la section Meta doit être une chaîne de caractères"
+
+#: /includes/meta-boxes/meta-box-model.php:107
+msgid "Meta box callback must be a callable function"
+msgstr ""
+"L'appel\n"
+" \n"
+"de la section\n"
+" \n"
+"Meta\n"
+" \n"
+"doit\n"
+" \n"
+"être\n"
+" \n"
+"une\n"
+" \n"
+"fonction\n"
+" \n"
+"accessible"
+
+#: /includes/post-types/place.php:16
+msgid "Places"
+msgstr "Lieux"
+
+#: /includes/post-types/place.php:17
+msgid "Place"
+msgstr "Lieu"
+
+#: /includes/post-types/place.php:18
+msgid "Add New Place"
+msgstr "Ajouter un nouveau lieu"
+
+#: /includes/post-types/place.php:19
+msgid "Edit Place"
+msgstr "Mettre à jour le lieu"
+
+#: /includes/post-types/place.php:20
+msgid "New Place"
+msgstr "Nouveau lieu"
+
+#: /includes/post-types/place.php:21
+msgid "View Place"
+msgstr "Voir le lieu"
+
+#: /includes/post-types/place.php:22
+msgid "Search Places"
+msgstr "Chercher les lieux"
+
+#: /includes/post-types/place.php:23
+msgid "No places found"
+msgstr "Pas le lieu trouvé"
+
+#: /includes/post-types/place.php:24
+msgid "No places found in trash"
+msgstr "Pas de lieu trouvé dans la corbeille"
+
+#: /includes/support/location.php:91
+msgid "Location"
+msgstr "Emplacement"
+
+#: /includes/support/views/location.php:100
+msgid "Enter a location"
+msgstr "Entrez un emplacement"
+
+#: /includes/support/views/location.php:103
+msgid "Find"
+msgstr "Trouver"
+
+#: /includes/support/views/location.php:107
+msgid "Drag marker to reposition."
+msgstr ""
+"Déplacer le m\n"
+"arqueur pour le repositionner."
+
+#: /includes/support/views/location.php:112 /includes/support/views/location.php:
+#: 116
+msgid "Street Address"
+msgstr "Adresse de la rue"
+
+#: /includes/support/views/location.php:121 /includes/support/views/location.php:
+#: 125
+msgid "City"
+msgstr "Ville"
+
+#: /includes/support/views/location.php:130 /includes/support/views/location.php:
+#: 134
+msgid "State"
+msgstr "Etat"
+
+#: /includes/support/views/location.php:139 /includes/support/views/location.php:
+#: 143
+msgid "Postal Code"
+msgstr "Code postal"
+
+#: /includes/support/views/location.php:148 /includes/support/views/location.php:
+#: 152
+msgid "Country"
+msgstr "Pays"
+
+#: /includes/support/views/location.php:159 /includes/support/views/location.php:
+#: 163
+msgid "Latitude"
+msgstr "Latitude"
+
+#: /includes/support/views/location.php:168 /includes/support/views/location.php:
+#: 172
+msgid "Longitude"
+msgstr "Longitude"
+
+#: /includes/taxonomies/location-category.php:16
+msgid "Location Categories"
+msgstr "Catégories des emplacements"
+
+#: /includes/taxonomies/location-category.php:17
+msgid "Location Category"
+msgstr "Catégorie de l'emplacement"
+
+#: /includes/taxonomies/location-category.php:18
+msgid "Edit Location Category"
+msgstr ""
+"Modifier\n"
+" la catégorie de l'emplacement"
+
+#: /includes/taxonomies/location-category.php:19
+msgid "View Location Category"
+msgstr "Voir la catégorie de l'emplacement"
+
+#: /includes/taxonomies/location-category.php:20
+msgid "Update Location Category"
+msgstr "Mettre à jour la catégorie de l'emplacement"
+
+#: /includes/taxonomies/location-category.php:21
+msgid "Add New Location Category"
+msgstr "Ajouter une nouvelle catégorie d'emplacement"
+
+#: /includes/taxonomies/location-category.php:22
+msgid "New Location Category Name"
+msgstr " Nouveau nom de catégorie d'emplacement"
+
+#: /includes/taxonomies/location-category.php:23
+msgid "Parent Location Category"
+msgstr "Catégorie d'emplacement parente"
+
+#: /includes/taxonomies/location-category.php:24
+msgid "Parent Location Category:"
+msgstr "Catégorie d'emplacement parente:"
+
+#: /includes/taxonomies/location-category.php:25
+msgid "Search Location Categories"
+msgstr ""
+"Recherche de c\n"
+"atégories d'emplacement"
+
+#: /includes/classes/pagination-text.php:35
+#, php-format
+msgid "Showing results %1$d - %2$d of %3$d"
+msgstr "Voir les resultats %1$d - %2$d de %3$d"

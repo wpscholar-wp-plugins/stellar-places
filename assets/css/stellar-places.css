@@ -1,0 +1,73 @@
+/**
+ * Ensure that maps display properly
+ *
+ * http://stackoverflow.com/questions/6612832/google-maps-info-window-looks-screwed-up
+ * http://stackoverflow.com/questions/11397343/google-map-remove-grid-from-roadmap
+ */
+body .stellar-places-map-canvas img,
+body .stellar-places-map-canvas object,
+body .stellar-places-map-canvas embed {
+	max-width: none !important;
+	-moz-box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+}
+
+/*
+ * Info Windows
+ */
+.stellar-places-map-canvas .stellar-places-info-window h1,
+.stellar-places-map-canvas .stellar-places-info-window h2,
+.stellar-places-map-canvas .stellar-places-info-window h3,
+.stellar-places-map-canvas .stellar-places-info-window h4,
+.stellar-places-map-canvas .stellar-places-info-window h5,
+.stellar-places-map-canvas .stellar-places-info-window h6 {
+	margin: 0;
+	padding: 0 0 .25em 0;
+}
+
+.stellar-places-map-canvas .stellar-places-info-window-thumbnail {
+	float: left;
+	margin: 0 1em 1em 0;
+}
+
+.stellar-places-map-canvas .stellar-places-info-window-footer {
+	clear: both;
+}
+
+/*
+ * Postal Addresses
+ */
+.stellar-places-postal-address.formatted,
+.stellar-places-postal-address.formatted .street-address,
+.stellar-places-postal-address.formatted .country {
+	display: block;
+}
+
+.stellar-places-postal-address.formatted .street-address .delimiter,
+.stellar-places-postal-address.formatted .region .delimiter,
+.stellar-places-postal-address.formatted .postal-code .delimiter {
+	display: none;
+}
+
+/*
+ * Single Template
+ */
+.stellar-places-single,
+.stellar-places-single .stellar-places-map-canvas {
+	margin-bottom: 1em;
+}
+
+.stellar-places-single .stellar-places-postal-address.formatted {
+	font-style: italic;
+}
+
+/*
+ * Archive Template
+ */
+.stellar-places-archive {
+	margin: 0 0 2em 0;
+}
+.stellar-places-archive .stellar-places-results-text {
+	margin-bottom: .25em;
+}

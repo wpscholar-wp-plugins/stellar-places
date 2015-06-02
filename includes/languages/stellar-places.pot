@@ -1,0 +1,181 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: stellar-places 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-08-15 23:49-0500\n"
+"PO-Revision-Date: 2014-08-15 23:49-0500\n"
+"Last-Translator: Micah Wood <micah@wpscholar.com>\n"
+"Language-Team: Stellar Translate <translations@stellarific.com>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: includes/classes/pagination-text.php:35
+#, php-format
+msgid "Showing results %1$d - %2$d of %3$d"
+msgstr ""
+
+#: includes/meta-boxes/meta-box-model.php:101
+msgid "Meta box HTML id must be a string"
+msgstr ""
+
+#: includes/meta-boxes/meta-box-model.php:104
+msgid "Meta box title must be a string"
+msgstr ""
+
+#: includes/meta-boxes/meta-box-model.php:107
+msgid "Meta box callback must be a callable function"
+msgstr ""
+
+#: includes/plugin-check.php:122
+#, php-format
+msgid ""
+"%s requires PHP version %s or later. You are currently running version %s."
+msgstr ""
+
+#: includes/plugin-check.php:127
+msgid " Please contact your web host about upgrading PHP."
+msgstr ""
+
+#: includes/plugin-check.php:142
+#, php-format
+msgid "%s requires the %s PHP extension."
+msgstr ""
+
+#: includes/plugin-check.php:160
+#, php-format
+msgid ""
+"%s requires WordPress version %s or later. You are currently running version "
+"%s."
+msgstr ""
+
+#: includes/plugin-check.php:197
+#, php-format
+msgid "<p>The <strong>%s</strong> plugin has been deactivated.</p>"
+msgstr ""
+
+#: includes/post-types/place.php:16
+msgid "Places"
+msgstr ""
+
+#: includes/post-types/place.php:17
+msgid "Place"
+msgstr ""
+
+#: includes/post-types/place.php:18
+msgid "Add New Place"
+msgstr ""
+
+#: includes/post-types/place.php:19
+msgid "Edit Place"
+msgstr ""
+
+#: includes/post-types/place.php:20
+msgid "New Place"
+msgstr ""
+
+#: includes/post-types/place.php:21
+msgid "View Place"
+msgstr ""
+
+#: includes/post-types/place.php:22
+msgid "Search Places"
+msgstr ""
+
+#: includes/post-types/place.php:23
+msgid "No places found"
+msgstr ""
+
+#: includes/post-types/place.php:24
+msgid "No places found in trash"
+msgstr ""
+
+#: includes/support/location.php:91
+msgid "Location"
+msgstr ""
+
+#: includes/support/views/location.php:100
+msgid "Enter a location"
+msgstr ""
+
+#: includes/support/views/location.php:103
+msgid "Find"
+msgstr ""
+
+#: includes/support/views/location.php:107
+msgid "Drag marker to reposition."
+msgstr ""
+
+#: includes/support/views/location.php:112
+#: includes/support/views/location.php:116
+msgid "Street Address"
+msgstr ""
+
+#: includes/support/views/location.php:121
+#: includes/support/views/location.php:125
+msgid "City"
+msgstr ""
+
+#: includes/support/views/location.php:130
+#: includes/support/views/location.php:134
+msgid "State"
+msgstr ""
+
+#: includes/support/views/location.php:139
+#: includes/support/views/location.php:143
+msgid "Postal Code"
+msgstr ""
+
+#: includes/support/views/location.php:148
+#: includes/support/views/location.php:152
+msgid "Country"
+msgstr ""
+
+#: includes/support/views/location.php:159
+#: includes/support/views/location.php:163
+msgid "Latitude"
+msgstr ""
+
+#: includes/support/views/location.php:168
+#: includes/support/views/location.php:172
+msgid "Longitude"
+msgstr ""
+
+#: includes/taxonomies/location-category.php:18
+msgid "Edit Location Category"
+msgstr ""
+
+#: includes/taxonomies/location-category.php:19
+msgid "View Location Category"
+msgstr ""
+
+#: includes/taxonomies/location-category.php:20
+msgid "Update Location Category"
+msgstr ""
+
+#: includes/taxonomies/location-category.php:21
+msgid "Add New Location Category"
+msgstr ""
+
+#: includes/taxonomies/location-category.php:22
+msgid "New Location Category Name"
+msgstr ""
+
+#: includes/taxonomies/location-category.php:23
+msgid "Parent Location Category"
+msgstr ""
+
+#: includes/taxonomies/location-category.php:24
+msgid "Parent Location Category:"
+msgstr ""
+
+#: includes/taxonomies/location-category.php:25
+msgid "Search Location Categories"
+msgstr ""
