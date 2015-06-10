@@ -47,9 +47,10 @@
 					var locations = $.parseJSON($el.attr('data-stellar-places-map-locations'));
 					this.collection = new app.collections.Places(locations);
 
-					var infoWindow = new google.maps.InfoWindow();
-					var autoZoom = 'true' === $el.attr('data-stellar-places-map-auto-zoom');
+                    var autoZoom = 'true' === $el.attr('data-stellar-places-map-auto-zoom');
 					var displayInfoWindows = 'true' === $el.attr('data-stellar-places-map-info-windows');
+
+                    var markers = new Array();
 
 					this.collection.each(
 						function ( model ) {
@@ -69,23 +70,28 @@
 							}
 
 							var marker = new google.maps.Marker(markerOptions);
+                            marker.infoWindow = new google.maps.InfoWindow();
+
+                            markers.push(marker);
+                            $el.data('markers', markers);
 
 							if ( displayInfoWindows ) {
 								var content = _.template($('#stellar-places-info-window-template').html(), model.toJSON());
+                                //var content = "<h1>hello world</h1>>";
 
 								google.maps.event.addListener(
 									marker, 'click', function () {
-										infoWindow.close();
-										infoWindow.setOptions(
+                                        marker.infoWindow.close();
+                                        marker.infoWindow.setOptions(
 											{
 												content: content,
 												maxWidth: width - 140
 											}
 										);
-										infoWindow.open(map, marker);
+                                        marker.infoWindow.open(map, marker);
 									}
 								);
-							}
+                            }
 
 						}
 					);
