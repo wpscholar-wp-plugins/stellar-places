@@ -120,7 +120,9 @@
                     google.maps.event.addListener(
                         map, 'resize', function () {
                             width = $el.width();
-                            infoWindow.close();
+                            $.each($el.data('stellarPlacesMapLocations'), function(i, location){
+                                location.marker.infoWindow.close();
+                            });
                         }
                     );
 
