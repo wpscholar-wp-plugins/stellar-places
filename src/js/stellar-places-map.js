@@ -4,6 +4,8 @@
 
     var app = win.stellarPlaces || {};
 
+    var EventDispatcher = _.extend({}, Backbone.Events);
+
     app.getCoordinates = function (lat, lng) {
         return new google.maps.LatLng(Number(lat), Number(lng));
     };
@@ -74,20 +76,22 @@
                             if (displayInfoWindows) {
                                 var content = _.template($('#stellar-places-info-window-template').html(), model.toJSON());
 
-                                marker.infoWindow = new google.maps.InfoWindow();
+                                marker.infoWindow = new google.maps.InfoWindow({
+                                    content: content,
+                                    maxWidth: width - 140
+                                });
 
                                 google.maps.event.addListener(
-                                    marker, 'click', function () {
-                                        marker.infoWindow.close();
-                                        marker.infoWindow.setOptions(
-                                            {
-                                                content: content,
-                                                maxWidth: width - 140
-                                            }
-                                        );
+                                    marker, 'click', function (e) {
+                                        EventDispatcher.trigger('closeAllInfoWindows');
                                         marker.infoWindow.open(map, marker);
                                     }
                                 );
+
+                                EventDispatcher.on('closeAllInfoWindows', function () {
+                                    marker.infoWindow.close();
+                                });
+
                             }
 
                         }
