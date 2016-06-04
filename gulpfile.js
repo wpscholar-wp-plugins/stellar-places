@@ -1,4 +1,9 @@
 var gulp = require('gulp');
+var shell = require('gulp-shell');
+var plumber = require('gulp-plumber');
+var del = require('del');
+var sound = require('mac-sounds');
+var argv = require('yargs').argv;
 
 var config = {
     css: {
@@ -25,6 +30,32 @@ var config = {
             watch: './src/js/jquery.geocomplete.js',
             clean: './assets/js/jquery.geocomplete*js'
         }
+    },
+    svn: {
+        url: 'https://plugins.svn.wordpress.org/stellar-places/',
+        src: [
+            './**',
+            '!**/src',
+            '!**/src/**',
+            '!**/svn',
+            '!**/svn/**',
+            '!**/readme.md',
+            '!**/package.json',
+            '!**/node_modules',
+            '!**/node_modules/**',
+            '!**/bower.json',
+            '!**/bower_components',
+            '!**/bower_components/**',
+            '!**/gulpfile.js',
+            '!**/gulp',
+            '!**/gulp/**',
+            '!**/vendor',
+            '!**/vendor/**',
+            '!**/composer.json',
+            '!**/composer.lock'
+        ],
+        dest: './svn/trunk',
+        clean: './svn/trunk/**/*'
     }
 };
 
@@ -50,7 +81,59 @@ gulp.task('js:watch:geocomplete', function () {
 });
 
 gulp.task('clean', ['css:clean', 'js:clean:stellar-places-map', 'js:clean:geocomplete']);
-gulp.task('build', ['css:build', 'js:build:stellar-places-map', 'js:build:geocomplete']);
+gulp.task('build', ['css:build', 'js:build:stellar-places-map', 'js:build:geocomplete', 'freemius:update', 'freemius:copy']);
 gulp.task('watch', ['css:watch', 'js:watch:stellar-places-map', 'js:watch:geocomplete']);
 
 gulp.task('default', ['build', 'watch']);
+
+// Freemius
+gulp.task('freemius:update', function () {
+    return gulp.src('*.js', {read: false}).pipe(shell(["composer update freemius/wordpress-sdk"]));
+});
+
+gulp.task('freemius:clean', function () {
+    return del('./includes/freemius/**/*');
+});
+
+gulp.task('freemius:copy', ['freemius:clean'], function () {
+    return gulp.src('./vendor/freemius/wordpress-sdk/**/*').pipe(gulp.dest('./includes/freemius'));
+});
+
+// SVN
+gulp.task('svn:checkout', shell.task('svn co ' + config.svn.url + ' svn'));
+
+gulp.task('svn:clean', function () {
+    return del(config.svn.clean);
+});
+
+gulp.task('svn:copy', ['svn:clean'], function () {
+    return gulp.src(config.svn.src)
+        .pipe(plumber({
+            errorHandler: function (err) {
+                sound('blow');
+                console.log(err);
+            }
+        }))
+        .pipe(gulp.dest(config.svn.dest));
+});
+
+gulp.task('svn:addremove', function () {
+    return gulp.src('*.js', {read: false})
+        .pipe(shell([
+            "svn st | grep ^? | sed '\''s/?    //'\'' | xargs svn add",
+            "'svn st | grep ^! | sed '\''s/!    //'\'' | xargs svn rm"
+        ], {
+            cwd: './svn'
+        }))
+});
+
+gulp.task('svn:tag', function () {
+    return gulp.src('*.js', {read: false})
+        .pipe(shell([
+            'svn cp trunk tags/' + argv.v
+        ], {
+            cwd: './svn'
+        }))
+});
+
+gulp.task('project:build', ['svn:copy']);

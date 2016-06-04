@@ -24,13 +24,12 @@ class Stellar_Places_Location_Category {
 				'parent_item_colon' => __( 'Parent Location Category:', 'stellar-places' ),
 				'search_items'      => __( 'Search Location Categories', 'stellar-places' ),
 			),
-			'public'            => false,
-			'show_ui'           => true,
+			'public'            => true,
 			'show_tagcloud'     => false,
 			'show_admin_column' => true,
 			'hierarchical'      => true,
 			'rewrite'           => array(
-				'slug' => 'location-categories',
+				'slug' => 'locations/category',
 			),
 			'supports'          => array(
 				'stellar-places-location',
