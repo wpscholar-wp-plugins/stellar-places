@@ -22,7 +22,6 @@ final class Stellar_Places {
 		'Stellar_Places_Pagination_Text'     => '/classes/pagination-text.php',
 		'Stellar_Places_Place'               => '/post-types/place.php',
 		'Stellar_Places_Place_Model'         => '/models/place.php',
-		'Stellar_Places_Post_Type_Support'   => '/classes/post-type-support.php',
 		'Stellar_Places_Postal_Address'      => '/classes/postal-address.php',
 		'Stellar_Places_Query'               => '/queries/places-query.php',
 		'Stellar_Places_Taxonomy_Support'    => '/classes/taxonomy-support.php',
@@ -72,6 +71,7 @@ final class Stellar_Places {
 		if ( ! isset( self::$_instance ) ) {
 			self::$_instance = new self();
 		}
+
 		return self::$_instance;
 	}
 
@@ -82,7 +82,7 @@ final class Stellar_Places {
 	 */
 	protected function _autoload( $class_name ) {
 		if ( array_key_exists( $class_name, self::$_class_map ) ) {
-			$file = dirname( __FILE__ ) . self::$_class_map[$class_name];
+			$file = dirname( __FILE__ ) . self::$_class_map[ $class_name ];
 			if ( file_exists( $file ) ) {
 				include( $file );
 			}
@@ -96,7 +96,7 @@ final class Stellar_Places {
 			$upgrade->upgrade_directory = dirname( __FILE__ ) . '/upgrades';
 			$upgrade->previous_version = $previous_version;
 			$upgrade->upgrade();
-			update_option( 'stellar_places_version', STELLAR_PLACES_VERSION );
+			update_option( 'stellar_places_version', STELLAR_PLACES_VERSION, true );
 		}
 	}
 
@@ -175,7 +175,7 @@ final class Stellar_Places {
 	 * @return array
 	 */
 	public static function get_post_types() {
-		return Stellar_Places_Post_Type_Support::get_post_types_that_support( Stellar_Places_Location_Support::FEATURE );
+		return get_post_types_by_support( Stellar_Places_Location_Support::FEATURE );
 	}
 
 	/**
@@ -191,6 +191,7 @@ final class Stellar_Places {
 	 * Get a collection of place objects
 	 *
 	 * @param string|array $query
+	 *
 	 * @return array
 	 */
 	public static function get_places( $query = '' ) {
@@ -207,6 +208,7 @@ final class Stellar_Places {
 			wp_reset_postdata();
 		}
 		$places = apply_filters( 'stellar_places', $places, $places_query );
+
 		return $places;
 	}
 
@@ -214,6 +216,7 @@ final class Stellar_Places {
 	 * Get a place object given a $post
 	 *
 	 * @param WP_Post $post
+	 *
 	 * @return Stellar_Places_Place_Model
 	 */
 	public static function get_place_object( WP_Post $post ) {
@@ -248,11 +251,12 @@ final class Stellar_Places {
 			foreach ( $taxonomies as $taxonomy ) {
 				$terms = wp_list_pluck( wp_get_post_terms( $post->ID, $taxonomy ), 'slug' );
 				if ( ! empty( $terms ) ) {
-					$place->taxonomies[$taxonomy] = $terms;
+					$place->taxonomies[ $taxonomy ] = $terms;
 				}
 			}
 		}
 		$place = apply_filters( 'stellar_place', $place, $post );
+
 		return $place;
 	}
 
@@ -260,6 +264,7 @@ final class Stellar_Places {
 	 * Get a postal address
 	 *
 	 * @param Stellar_Places_Place_Model $place
+	 *
 	 * @return Stellar_Places_Postal_Address
 	 */
 	public static function get_postal_address( Stellar_Places_Place_Model $place ) {
@@ -270,6 +275,7 @@ final class Stellar_Places {
 			'postalCode'      => $place->postalCode,
 			'addressCountry'  => $place->addressCountry,
 		) );
+
 		return $postal_address;
 	}
 
@@ -277,6 +283,7 @@ final class Stellar_Places {
 	 * Get a map object
 	 *
 	 * @param null|WP_Post|WP_Query|Stellar_Places_Place_Model $args
+	 *
 	 * @return Stellar_Places_Google_Map
 	 */
 	public static function get_map( $args = null ) {
@@ -285,6 +292,7 @@ final class Stellar_Places {
 			$args = $wp_query;
 		}
 		$map = new Stellar_Places_Google_Map( $args );
+
 		return $map;
 	}
 
@@ -294,6 +302,7 @@ final class Stellar_Places {
 	 * responsive as opposed to using the Google Static Maps API.
 	 *
 	 * @param Stellar_Places_Place_Model $place
+	 *
 	 * @return Stellar_Places_Google_Map
 	 */
 	public static function get_static_map( Stellar_Places_Place_Model $place ) {
@@ -313,6 +322,7 @@ final class Stellar_Places {
 				),
 			),
 		);
+
 		return $map;
 	}
 
@@ -320,6 +330,7 @@ final class Stellar_Places {
 	 * Get the excerpt for a WP_Post by post ID.
 	 *
 	 * @param int $post_id
+	 *
 	 * @return string
 	 */
 	public static function get_excerpt_by_id( $post_id = 0 ) {
@@ -329,7 +340,8 @@ final class Stellar_Places {
 		setup_postdata( $post );
 		$excerpt = get_the_excerpt();
 		$post = $save_post;
-		wp_reset_postdata( $post );
+		wp_reset_postdata();
+
 		return $excerpt;
 	}
 

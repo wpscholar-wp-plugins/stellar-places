@@ -1,10 +1,10 @@
 === Plugin Name ===
-Contributors: stellariffic, woodent, areimann, adamjwalker
-Donate link: http://stellarplaces.com/donations/
+Contributors: woodent
+Donate link: https://www.paypal.me/wpscholar
 Tags: map, maps, places, location, geolocation, geo, google maps
-Requires at least: 3.5
-Tested up to: 4.0.1
-Stable tag: 1.0.3
+Requires at least: 4.5.0
+Tested up to: 4.5.2
+Stable tag: 1.0.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -47,7 +47,7 @@ Let us how know how you are using Stellar Places!
 
 = Upcoming Features =
 
-Our development team will be building out extensions for this plugin that you can install to gain additional functionality.  So, if there is a feature or integration that you are interested in, please let us know. What we build will be entirely based on what our users need, so let your voice be heard and contact us via the form at the bottom of our [Stellar Places](http://stellarplaces.com/) page.
+If there is a feature or integration that you are interested in, please let me know. What I build will be entirely based on what my users need, so let your voice be heard by using the [support forum](https://wordpress.org/support/plugin/stellar-places) or creating a [new issue on GitHub](https://github.com/wpscholar/stellar-places/issues/new).
 
 *Banner Disclaimer*: The icon used in the banner was designed by [alecive](http://www.iconarchive.com/show/flatwoken-icons-by-alecive/Apps-Google-Maps-icon.html).  It has been altered and used with the author's permission under the [Creative Commons Attribution-ShareAlike license](http://creativecommons.org/licenses/by-sa/4.0/).
 
@@ -62,7 +62,7 @@ Jacques Soulé (French) - http://wordpress-pour-vous.com/
 = Prerequisites =
 If you don't meet the below requirements, I highly recommend you upgrade your WordPress install or move to a web host that supports a more recent version of PHP.
 
-* Requires WordPress version 3.5 or greater
+* Requires WordPress version 4.5.0 or greater ( if you are running an older version of WordPress, version 1.0.3 or earlier of this plugin will support WordPress 3.5)
 * Requires PHP version 5.2 or greater ( PHP version 5.2.4 is required to run WordPress version 3.2 )
 
 = Install via Search =
@@ -80,6 +80,12 @@ If you don't meet the below requirements, I highly recommend you upgrade your Wo
 4. Click on the 'Choose File' button and point your machine to the .zip you initially downloaded.
 5. Click 'Install Now'
 6. After the install is complete, click the 'Activate Plugin' link.
+
+= Compatibility =
+
+* Currently, there are no known conflicts with other WordPress plugins. If you believe you've found one, please let us know on the [support forum](https://wordpress.org/support/plugin/stellar-places)
+* The current version of this plugin is only compatible with WordPress 4.5 or greater.
+* Versions 1.0 to 1.0.3 of this plugin are compatible with WordPress 3.5 up until, but not including, version 4.5.
 
 == Frequently Asked Questions ==
 
@@ -136,14 +142,14 @@ Absolutely.  There is an `/includes/templates` directory in the plugin that cont
 
 == Changelog ==
 
-= 1.0.0 =
-* Initial public release
+= 1.0.4 =
+* Made the location category taxonomy public.
+* Fixed bugs related to updated JavaScript dependencies in WordPress 4.5.
+* Updated code to use the new `get_post_types_by_support()` function in WordPress 4.5
 
-= 1.0.1 =
-* Fix the minzoom and maxzoom shortcode attributes (not previously working).
-* Ensure map centers properly on window resize.
-* Process shortcodes in the location description that appears in the map popups.
-* Remove the div that wraps the map canvas to avoid complicating the CSS.
+= 1.0.3 =
+* Updated readme to reflect compatibility with WordPress version 4.0.1
+* Fixed bug in shortcode where setting 'zoom' wouldn't work when markers were present.
 
 = 1.0.2 =
 * Added a 'stellar_place' filter for place objects.
@@ -154,9 +160,14 @@ Absolutely.  There is an `/includes/templates` directory in the plugin that cont
 * Added set 'with_front' to false for the place post type to keep urls clean.
 * Added an upgrade routine.
 
-= 1.0.3 =
-* Updated readme to reflect compatibility with WordPress version 4.0.1
-* Fixed bug in shortcode where setting 'zoom' wouldn't work when markers were present.
+= 1.0.1 =
+* Fix the minzoom and maxzoom shortcode attributes (not previously working).
+* Ensure map centers properly on window resize.
+* Process shortcodes in the location description that appears in the map popups.
+* Remove the div that wraps the map canvas to avoid complicating the CSS.
+
+= 1.0.0 =
+* Initial public release
 
 == Upgrade Notice ==
 
@@ -168,3 +179,6 @@ Added French translation.  Added 'stellar_place' filter for place objects. Minor
 
 = 1.0.3 =
 Bug fix for the 'zoom' shortcode attribute.
+
+= 1.0.4 =
+The latest version of this plugin requires WordPress 4.5 or greater! If you are running an older version of WordPress, please upgrade first. [Review changelog](https://wordpress.org/plugins/stellar-places/changelog/)

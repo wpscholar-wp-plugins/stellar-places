@@ -1,2 +1,8 @@
 # Node.js
 node_modules
+
+# Composer
+/vendor
+
+# SVN
+/svn

@@ -22,8 +22,6 @@ class Stellar_Places_Context {
 			$context = self::get_archive_context();
 		} else if ( is_search() ) {
 			$context[] = 'search';
-		} else if ( is_comments_popup() ) {
-			$context[] = 'comments-popup';
 		} else if ( is_404() ) {
 			$context[] = '404';
 		}

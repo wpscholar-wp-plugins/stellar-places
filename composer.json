@@ -1,0 +1,15 @@
+{
+  "name": "wpscholar/stellar-places",
+  "description": "Stellar Places is an intuitive plugin for easily creating, managing and displaying locations using Google Maps.",
+  "type": "wordpress-plugin",
+  "license": "GPL-3.0",
+  "authors": [
+    {
+      "name": "Micah Wood",
+      "email": "micah@wpscholar.com"
+    }
+  ],
+  "require": {
+    "freemius/wordpress-sdk": "@stable"
+  }
+}

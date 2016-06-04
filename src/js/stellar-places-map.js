@@ -74,7 +74,7 @@
                             model.set('marker', marker);
 
                             if (displayInfoWindows) {
-                                var content = _.template($('#stellar-places-info-window-template').html(), model.toJSON());
+                                var content = _.template($('#stellar-places-info-window-template').html())(model.toJSON());
 
                                 marker.infoWindow = new google.maps.InfoWindow({
                                     content: content,
