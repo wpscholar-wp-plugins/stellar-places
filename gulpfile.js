@@ -81,7 +81,7 @@ gulp.task('js:watch:geocomplete', function () {
 });
 
 gulp.task('clean', ['css:clean', 'js:clean:stellar-places-map', 'js:clean:geocomplete']);
-gulp.task('build', ['css:build', 'js:build:stellar-places-map', 'js:build:geocomplete', 'freemius:update', 'freemius:copy']);
+gulp.task('build', ['css:build', 'js:build:stellar-places-map', 'js:build:geocomplete', 'freemius:copy']);
 gulp.task('watch', ['css:watch', 'js:watch:stellar-places-map', 'js:watch:geocomplete']);
 
 gulp.task('default', ['build', 'watch']);
@@ -91,7 +91,7 @@ gulp.task('freemius:update', function () {
     return gulp.src('*.js', {read: false}).pipe(shell(["composer update freemius/wordpress-sdk"]));
 });
 
-gulp.task('freemius:clean', function () {
+gulp.task('freemius:clean', ['freemius:update'], function () {
     return del('./includes/freemius/**/*');
 });
 
