@@ -127,6 +127,7 @@ gulp.task('svn:addremove', function () {
         }))
 });
 
+// gulp svn:tag --v=1.0.4
 gulp.task('svn:tag', function () {
     return gulp.src('*.js', {read: false})
         .pipe(shell([
