@@ -6,7 +6,7 @@
  * Description: An intuitive plugin for easily creating, managing and displaying locations using Google Maps.
  * Author: Micah Wood
  * Author URI: https://wpscholar.com
- * Version: 1.0.4
+ * Version: 1.0.5
  * Text Domain: stellar-places
  * License: GPL3
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -14,7 +14,7 @@
  * Copyright 2014-2016 by Micah Wood - All rights reserved.
  */
 
-define( 'STELLAR_PLACES_VERSION', '1.0.4' );
+define( 'STELLAR_PLACES_VERSION', '1.0.5' );
 define( 'STELLAR_PLACES_FILE', __FILE__ );
 
 // Check plugin requirements
@@ -26,9 +26,6 @@ if ( 'plugins.php' == $pagenow ) {
 	$plugin_check->min_wp_version = '4.5.0';
 	$plugin_check->check_plugin_requirements();
 }
-
-// Composer
-require dirname( __FILE__ ) . '/vendor/autoload.php';
 
 // Freemius
 require dirname( __FILE__ ) . '/includes/freemius.php';
