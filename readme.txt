@@ -4,7 +4,7 @@ Donate link: https://www.paypal.me/wpscholar
 Tags: map, maps, places, location, geolocation, geo, google maps
 Requires at least: 4.5.0
 Tested up to: 4.5.2
-Stable tag: 1.0.5
+Stable tag: 1.0.6
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -142,6 +142,11 @@ Absolutely.  There is an `/includes/templates` directory in the plugin that cont
 
 == Changelog ==
 
+= 1.0.6 =
+* Added settings page
+* Added ability to supply a Google Maps API key.
+* Fixed bug where infoWindow wasn't defined.
+
 = 1.0.5 =
 * Fixed bug that prevented plugin from being activated.
 
@@ -188,3 +193,6 @@ The latest version of this plugin requires WordPress 4.5 or greater! If you are 
 
 = 1.0.5 =
 The latest version of this plugin requires WordPress 4.5 or greater! If you are running an older version of WordPress, please upgrade first. [Review changelog](https://wordpress.org/plugins/stellar-places/changelog/)
+
+= 1.0.6 =
+Added ability to easily supply a Google Maps API key via settings page.
