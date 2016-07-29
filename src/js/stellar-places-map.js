@@ -88,6 +88,13 @@
                                     }
                                 );
 
+                                google.maps.event.addListener(
+                                    map, 'resize', function () {
+                                        width = $el.width();
+                                        marker.infoWindow.close();
+                                    }
+                                );
+
                                 EventDispatcher.on('closeAllInfoWindows', function () {
                                     marker.infoWindow.close();
                                 });
@@ -118,13 +125,6 @@
                             var center = map.getCenter();
                             google.maps.event.trigger(map, 'resize');
                             map.setCenter(center);
-                        }
-                    );
-
-                    google.maps.event.addListener(
-                        map, 'resize', function () {
-                            width = $el.width();
-                            infoWindow.close();
                         }
                     );
 
