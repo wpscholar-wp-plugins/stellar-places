@@ -24,6 +24,7 @@ final class Stellar_Places {
 		'Stellar_Places_Place_Model'         => '/models/place.php',
 		'Stellar_Places_Postal_Address'      => '/classes/postal-address.php',
 		'Stellar_Places_Query'               => '/queries/places-query.php',
+		'Stellar_Places_Settings_Page'       => '/admin/settings-page.php',
 		'Stellar_Places_Taxonomy_Support'    => '/classes/taxonomy-support.php',
 		'Stellar_Places_Upgrade'             => '/classes/upgrade.php',
 	);
@@ -37,6 +38,7 @@ final class Stellar_Places {
 
 		if ( is_admin() ) {
 			$this->upgrade();
+			Stellar_Places_Settings_Page::initialize();
 		}
 
 		register_activation_hook( STELLAR_PLACES_FILE, array( $this, 'activation' ) );
@@ -60,6 +62,9 @@ final class Stellar_Places {
 
 		// Custom filters
 		add_filter( 'stellar_places_description', 'strip_shortcodes' );
+
+		// Set Google Maps API key
+		add_filter( 'script_loader_src', array( __CLASS__, 'set_google_maps_api_key' ), 10, 2 );
 	}
 
 	/**
@@ -343,6 +348,26 @@ final class Stellar_Places {
 		wp_reset_postdata();
 
 		return $excerpt;
+	}
+
+	/**
+	 * Set the Google Maps API key for our Google Maps scripts
+	 *
+	 * @param string $src
+	 * @param string $handle
+	 *
+	 * @return string
+	 */
+	public static function set_google_maps_api_key( $src, $handle ) {
+
+		$api_key = get_option( 'stellar_places_google_maps_api_key' );
+		$handles = array( 'google-maps-js-api', 'google-maps-js-api-places-library' );
+
+		if ( $api_key && in_array( $handle, $handles ) ) {
+			$src = esc_url_raw( add_query_arg( 'key', $api_key, $src ) );
+		}
+
+		return $src;
 	}
 
 }
