@@ -31,7 +31,7 @@ class Stellar_Places_Map_Shortcode {
 				'lat'         => '0',
 				'lng'         => '0',
 				// Google Maps
-				'mapTypeId'   => 'ROADMAP',
+				'maptypeid'   => 'ROADMAP',
 				'scrollwheel' => 'false',
 				'zoom'        => null,
 				'maxzoom'     => null,
@@ -98,7 +98,7 @@ class Stellar_Places_Map_Shortcode {
 		$map->longitude = $atts['lng'];
 
 		// Set Google map options
-		$map->mapOptions['mapTypeId'] = $atts['mapTypeId'];
+		$map->mapOptions['mapTypeId'] = strtoupper( $atts['maptypeid'] );
 		$map->mapOptions['scrollwheel'] = filter_var( $atts['scrollwheel'], FILTER_VALIDATE_BOOLEAN );
 		$map->mapOptions['zoom'] = is_null( $atts['zoom'] ) ? null : absint( $atts['zoom'] );
 

@@ -3,8 +3,8 @@ Contributors: woodent
 Donate link: https://www.paypal.me/wpscholar
 Tags: map, maps, places, location, geolocation, geo, google maps
 Requires at least: 4.5.0
-Tested up to: 4.5.2
-Stable tag: 1.0.6
+Tested up to: 4.5.3
+Stable tag: 1.0.7
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -113,7 +113,11 @@ Just use the `[stellar_places_map]` shortcode in your post content, or even in a
 
 - **lat** - The default latitude for the map center, when no markers are displayed.
 - **lng** - The default longitude for the map center, when no markers are displayed.
-- **mapType** - Sets the map type for the Google Map. (Reference the Google Maps JS API for details) Default is a standard road map.
+- **mapTypeId** - Sets the map type for the Google Map. Options are:
+    - **roadmap** - Displays the default road map view. This is the default map type.
+    - **satellite** - Displays Google Earth satellite images.
+    - **hybrid** - Displays a mixture of normal and satellite views.
+    - **terrain** - Displays a physical map based on terrain information.
 - **scrollwheel** - Defaults to 'false', which prevents the map from zooming when scrolled over.
 - **zoom** - The default zoom for the map, when no markers are displayed. *Required if no markers are being displayed.*  Zoom levels are integers between 1 and 20.
 - **minzoom** - The minimum zoom level which will be displayed on the map. Zoom levels are integers between 1 and 20.
@@ -122,7 +126,7 @@ Just use the `[stellar_places_map]` shortcode in your post content, or even in a
 
 Example usage of the shortcode options:
 
-`[stellar_places_map post_id="29" maxzoom="14" height="250px" width="250px"]`
+`[stellar_places_map post_id="29" maxzoom="14" height="250px" width="250px" mapTypeId="hybrid"]`
 
 = How can I customize the content that appears on the single location pages and on the post type archive page? =
 
@@ -141,6 +145,9 @@ Absolutely.  There is an `/includes/templates` directory in the plugin that cont
 5. The front end on an iPhone showing how the map is by default responsive
 
 == Changelog ==
+
+= 1.0.7 =
+* Bug fix to enable switching map types in the shortcode.
 
 = 1.0.6 =
 * Added settings page
@@ -196,3 +203,6 @@ The latest version of this plugin requires WordPress 4.5 or greater! If you are 
 
 = 1.0.6 =
 Added ability to easily supply a Google Maps API key via settings page.
+
+= 1.0.7 =
+Added ability to change map type via the shortcode.
