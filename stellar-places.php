@@ -2,7 +2,7 @@
 
 /*
  * Plugin Name: Stellar Places
- * Plugin URI: http://stellarplaces.com/
+ * Plugin URI: https://wpscholar.com/wordpress-plugins/stellar-places/
  * Description: An intuitive plugin for easily creating, managing and displaying locations using Google Maps.
  * Author: Micah Wood
  * Author URI: https://wpscholar.com
