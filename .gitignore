@@ -6,3 +6,6 @@ node_modules
 
 # SVN
 /svn
+
+# Project
+/assets

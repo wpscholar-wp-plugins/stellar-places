@@ -10,7 +10,19 @@
     "url": "https://github.com/wpscholar/stellar-places/issues"
   },
   "homepage": "https://github.com/wpscholar/stellar-places",
+  "scripts": {
+    "build": "webpack -p",
+    "start": "webpack --watch"
+  },
   "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@wordpress/babel-plugin-makepot": "^3.0.0",
+    "@wordpress/babel-preset-default": "^4.0.0",
+    "@wordpress/browserslist-config": "^2.3.0",
+    "autoprefixer": "^9.4.10",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "css-loader": "^2.1.1",
     "del": "^1.2.1",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
@@ -23,6 +35,11 @@
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.5.3",
     "mac-sounds": "^0.1.1",
+    "mini-css-extract-plugin": "^0.5.0",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3",
     "yargs": "^4.7.1"
   }
 }

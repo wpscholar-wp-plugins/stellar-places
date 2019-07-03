@@ -1,5 +1,8 @@
 'use strict';
 
+const Backbone = require('backbone');
+const jQuery = require('jquery');
+
 (function ($, win, doc, undefined) {
 
     var app = win.stellarPlaces || {};

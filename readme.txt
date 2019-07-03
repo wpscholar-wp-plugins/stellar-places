@@ -1,5 +1,5 @@
 === Plugin Name ===
-Contributors: woodent
+Contributors: wpscholar
 Donate link: https://www.paypal.me/wpscholar
 Tags: map, maps, places, location, geolocation, geo, google maps
 Requires at least: 4.5.0
