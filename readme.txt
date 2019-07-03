@@ -2,9 +2,10 @@
 Contributors: wpscholar
 Donate link: https://www.paypal.me/wpscholar
 Tags: map, maps, places, location, geolocation, geo, google maps
-Requires at least: 4.5.0
-Tested up to: 4.5.3
-Stable tag: 1.0.7
+Requires at least: 5.2
+Tested up to: 5.2.2
+Requires PHP: 5.6
+Stable tag: 1.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -146,6 +147,10 @@ Absolutely.  There is an `/includes/templates` directory in the plugin that cont
 
 == Changelog ==
 
+= 1.1 =
+* Implemented REST API support.
+* General code clean up and maintenance.
+
 = 1.0.7 =
 * Bug fix to enable switching map types in the shortcode.
 
@@ -206,3 +211,6 @@ Added ability to easily supply a Google Maps API key via settings page.
 
 = 1.0.7 =
 Added ability to change map type via the shortcode.
+
+= 1.1 =
+Implemented REST API support.
