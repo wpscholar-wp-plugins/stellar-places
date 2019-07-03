@@ -5,11 +5,11 @@
  */
 class Stellar_Places_Postal_Address {
 
-	public $streetAddress = '';
+	public $streetAddress   = '';
 	public $addressLocality = '';
-	public $addressRegion = '';
-	public $postalCode = '';
-	public $addressCountry = '';
+	public $addressRegion   = '';
+	public $postalCode      = '';
+	public $addressCountry  = '';
 
 	/**
 	 * Create a new instance
@@ -54,7 +54,14 @@ class Stellar_Places_Postal_Address {
 	public function get_field_html( $field_name, $args = '' ) {
 		$html = '';
 		if ( $this->has( $field_name ) ) {
-			$args = wp_parse_args( $args, array( 'class' => '', 'delimiter' => ',', 'last' => '' ) );
+			$args  = wp_parse_args(
+				$args,
+				array(
+					'class'     => '',
+					'delimiter' => ',',
+					'last'      => '',
+				)
+			);
 			$html .= '<span class="' . esc_attr( $args['class'] ) . '">';
 			$html .= '<span itemprop="' . esc_attr( $field_name ) . '">';
 			$html .= esc_html( $this->$field_name );

@@ -14,10 +14,10 @@ class Stellar_Places_Taxonomy_Support {
 	public static function add_taxonomy_support( $taxonomy, $feature ) {
 		global $wp_taxonomies;
 		if ( taxonomy_exists( $taxonomy ) ) {
-			if ( isset( $wp_taxonomies[$taxonomy]->supports ) && is_array( $wp_taxonomies[$taxonomy]->supports ) ) {
-				$wp_taxonomies[$taxonomy]->supports[] = $feature;
+			if ( isset( $wp_taxonomies[ $taxonomy ]->supports ) && is_array( $wp_taxonomies[ $taxonomy ]->supports ) ) {
+				$wp_taxonomies[ $taxonomy ]->supports[] = $feature;
 			} else {
-				$wp_taxonomies[$taxonomy]->supports = array( $feature );
+				$wp_taxonomies[ $taxonomy ]->supports = array( $feature );
 			}
 		}
 	}
@@ -31,8 +31,8 @@ class Stellar_Places_Taxonomy_Support {
 	public static function remove_taxonomy_support( $taxonomy, $feature ) {
 		global $wp_taxonomies;
 		if ( taxonomy_exists( $taxonomy ) ) {
-			if ( isset( $wp_taxonomies[$taxonomy]->supports ) && is_array( $wp_taxonomies[$taxonomy]->supports ) ) {
-				unset( $wp_taxonomies[$taxonomy]->supports[$feature] );
+			if ( isset( $wp_taxonomies[ $taxonomy ]->supports ) && is_array( $wp_taxonomies[ $taxonomy ]->supports ) ) {
+				unset( $wp_taxonomies[ $taxonomy ]->supports[ $feature ] );
 			}
 		}
 	}
@@ -47,9 +47,9 @@ class Stellar_Places_Taxonomy_Support {
 	public static function taxonomy_supports( $taxonomy, $feature ) {
 		global $wp_taxonomies;
 		return (
-			isset( $wp_taxonomies[$taxonomy]->supports ) &&
-			is_array( $wp_taxonomies[$taxonomy]->supports ) &&
-			in_array( $feature, $wp_taxonomies[$taxonomy]->supports )
+			isset( $wp_taxonomies[ $taxonomy ]->supports ) &&
+			is_array( $wp_taxonomies[ $taxonomy ]->supports ) &&
+			in_array( $feature, $wp_taxonomies[ $taxonomy ]->supports )
 		);
 	}
 
@@ -65,8 +65,8 @@ class Stellar_Places_Taxonomy_Support {
 		global $wp_taxonomies;
 		$features = array();
 		if ( taxonomy_exists( $taxonomy ) ) {
-			if ( isset( $wp_taxonomies[$taxonomy]->supports ) && is_array( $wp_taxonomies[$taxonomy]->supports ) ) {
-				$features = $wp_taxonomies[$taxonomy]->supports;
+			if ( isset( $wp_taxonomies[ $taxonomy ]->supports ) && is_array( $wp_taxonomies[ $taxonomy ]->supports ) ) {
+				$features = $wp_taxonomies[ $taxonomy ]->supports;
 			}
 		}
 		return $features;

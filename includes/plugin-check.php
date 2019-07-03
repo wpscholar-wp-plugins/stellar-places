@@ -62,8 +62,8 @@ class Stellar_Places_Plugin_Check {
 	 */
 	function __construct( $file ) {
 		$this->errors = new WP_Error();
-		$this->file = $file;
-		$this->name = $this->get_plugin_name();
+		$this->file   = $file;
+		$this->name   = $this->get_plugin_name();
 	}
 
 	/**
@@ -118,8 +118,8 @@ class Stellar_Places_Plugin_Check {
 	 */
 	function check_has_min_php_version() {
 		if ( version_compare( PHP_VERSION, $this->min_php_version, '<' ) ) {
-			$error_msg = sprintf(
-				__( '%s requires PHP version %s or later. You are currently running version %s.', 'stellar-places' ),
+			$error_msg  = sprintf(
+				__( '%1$s requires PHP version %2$s or later. You are currently running version %3$s.', 'stellar-places' ),
 				$this->name,
 				$this->min_php_version,
 				PHP_VERSION
@@ -139,7 +139,7 @@ class Stellar_Places_Plugin_Check {
 				$this->errors->add(
 					'php_extension',
 					sprintf(
-						__( '%s requires the %s PHP extension.', 'stellar-places' ),
+						__( '%1$s requires the %2$s PHP extension.', 'stellar-places' ),
 						$this->name,
 						$extension
 					)
@@ -157,7 +157,7 @@ class Stellar_Places_Plugin_Check {
 			$this->errors->add(
 				'wp_version',
 				sprintf(
-					__( '%s requires WordPress version %s or later. You are currently running version %s.', 'stellar-places' ),
+					__( '%1$s requires WordPress version %2$s or later. You are currently running version %3$s.', 'stellar-places' ),
 					$this->name,
 					$this->min_wp_version,
 					$wp_version
@@ -172,14 +172,14 @@ class Stellar_Places_Plugin_Check {
 	 * @return bool
 	 */
 	function has_errors() {
-		return (boolean) count( $this->errors->errors );
+		return (bool) count( $this->errors->errors );
 	}
 
 	/**
 	 * Deactivate the plugin
 	 */
 	function deactivate() {
-		require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
+		require_once ABSPATH . '/wp-admin/includes/plugin.php';
 		if ( function_exists( 'deactivate_plugins' ) ) {
 			deactivate_plugins( $this->file );
 		}

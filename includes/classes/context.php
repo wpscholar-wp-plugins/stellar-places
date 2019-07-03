@@ -14,15 +14,15 @@ class Stellar_Places_Context {
 		$context = array();
 		if ( is_front_page() ) {
 			$context = self::get_front_page_context();
-		} else if ( is_home() ) {
+		} elseif ( is_home() ) {
 			$context = self::get_home_context();
-		} else if ( is_singular() ) {
+		} elseif ( is_singular() ) {
 			$context = self::get_singular_context();
-		} else if ( is_archive() ) {
+		} elseif ( is_archive() ) {
 			$context = self::get_archive_context();
-		} else if ( is_search() ) {
+		} elseif ( is_search() ) {
 			$context[] = 'search';
-		} else if ( is_404() ) {
+		} elseif ( is_404() ) {
 			$context[] = '404';
 		}
 		$context[] = 'index';
@@ -38,7 +38,7 @@ class Stellar_Places_Context {
 		$context = array( 'front-page' );
 		if ( is_home() ) {
 			$context = array_merge( $context, self::get_home_context() );
-		} else if ( is_page() ) {
+		} elseif ( is_page() ) {
 			$context = array_merge( $context, self::get_page_context() );
 		}
 		return $context;
@@ -59,7 +59,7 @@ class Stellar_Places_Context {
 	 * @return array
 	 */
 	public static function get_page_context() {
-		$post = get_queried_object();
+		$post    = get_queried_object();
 		$context = array(
 			'page-' . sanitize_html_class( $post->post_name ),
 			"page-{$post->ID}",
@@ -134,13 +134,13 @@ class Stellar_Places_Context {
 		$context = array();
 		if ( is_tax() ) {
 			$context = self::get_taxonomy_archive_context();
-		} else if ( is_category() ) {
+		} elseif ( is_category() ) {
 			$context = self::get_category_archive_context();
-		} else if ( is_tag() ) {
+		} elseif ( is_tag() ) {
 			$context = self::get_tag_archive_context();
-		} else if ( is_author() ) {
+		} elseif ( is_author() ) {
 			$context = self::get_author_archive_context();
-		} else if ( is_date() ) {
+		} elseif ( is_date() ) {
 			$context[] = 'date';
 		}
 		if ( is_post_type_archive() ) {
@@ -159,7 +159,7 @@ class Stellar_Places_Context {
 	 * @return array
 	 */
 	public static function get_taxonomy_archive_context() {
-		$term = get_queried_object();
+		$term    = get_queried_object();
 		$context = array(
 			"taxonomy-{$term->taxonomy}-" . sanitize_html_class( $term->slug ),
 			"taxonomy-{$term->taxonomy}-{$term->term_id}",
@@ -175,7 +175,7 @@ class Stellar_Places_Context {
 	 * @return array
 	 */
 	public static function get_category_archive_context() {
-		$term = get_queried_object();
+		$term    = get_queried_object();
 		$context = array(
 			'category-' . sanitize_html_class( $term->slug ),
 			"category-{$term->term_id}",
@@ -190,7 +190,7 @@ class Stellar_Places_Context {
 	 * @return array
 	 */
 	public static function get_tag_archive_context() {
-		$term = get_queried_object();
+		$term    = get_queried_object();
 		$context = array(
 			'tag-' . sanitize_html_class( $term->slug ),
 			"tag-{$term->term_id}",
@@ -205,7 +205,7 @@ class Stellar_Places_Context {
 	 * @return array
 	 */
 	public static function get_author_archive_context() {
-		$user = get_queried_object();
+		$user    = get_queried_object();
 		$context = array(
 			'author-' . sanitize_html_class( $user->nicename ),
 			"author-{$user->ID}",
@@ -221,7 +221,7 @@ class Stellar_Places_Context {
 	 */
 	public static function get_post_type_archive_context() {
 		$post_type = get_query_var( 'post_type' );
-		$context = array( "archive-{$post_type}" );
+		$context   = array( "archive-{$post_type}" );
 		return $context;
 	}
 

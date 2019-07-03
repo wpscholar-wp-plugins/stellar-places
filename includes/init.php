@@ -89,7 +89,7 @@ final class Stellar_Places {
 		if ( array_key_exists( $class_name, self::$_class_map ) ) {
 			$file = dirname( __FILE__ ) . self::$_class_map[ $class_name ];
 			if ( file_exists( $file ) ) {
-				include( $file );
+				include $file;
 			}
 		}
 	}
@@ -97,9 +97,9 @@ final class Stellar_Places {
 	public function upgrade() {
 		$previous_version = get_option( 'stellar_places_version' );
 		if ( STELLAR_PLACES_VERSION !== $previous_version ) {
-			$upgrade = new Stellar_Places_Upgrade();
+			$upgrade                    = new Stellar_Places_Upgrade();
 			$upgrade->upgrade_directory = dirname( __FILE__ ) . '/upgrades';
-			$upgrade->previous_version = $previous_version;
+			$upgrade->previous_version  = $previous_version;
 			$upgrade->upgrade();
 			update_option( 'stellar_places_version', STELLAR_PLACES_VERSION, true );
 		}
@@ -200,7 +200,7 @@ final class Stellar_Places {
 	 * @return array
 	 */
 	public static function get_places( $query = '' ) {
-		$places = array();
+		$places       = array();
 		$places_query = new Stellar_Places_Query( $query );
 		if ( $places_query->have_posts() ) {
 			while ( $places_query->have_posts() ) {
@@ -229,22 +229,22 @@ final class Stellar_Places {
 		if ( post_type_supports( get_post_type( $post ), Stellar_Places_Location_Support::FEATURE ) ) {
 			$place = new Stellar_Places_Place_Model();
 			// Coordinates
-			$place->latitude = $post->_stlr_places_latitude;
+			$place->latitude  = $post->_stlr_places_latitude;
 			$place->longitude = $post->_stlr_places_longitude;
 			// Postal Address
-			$place->streetAddress = $post->_stlr_places_street_address;
+			$place->streetAddress   = $post->_stlr_places_street_address;
 			$place->addressLocality = $post->_stlr_places_locality;
-			$place->addressRegion = $post->_stlr_places_region;
-			$place->postalCode = $post->_stlr_places_postal_code;
-			$place->addressCountry = $post->_stlr_places_country;
+			$place->addressRegion   = $post->_stlr_places_region;
+			$place->postalCode      = $post->_stlr_places_postal_code;
+			$place->addressCountry  = $post->_stlr_places_country;
 			// Details
-			$place->name = get_the_title( $post );
+			$place->name        = get_the_title( $post );
 			$place->description = apply_filters( 'stellar_places_description', self::get_excerpt_by_id( $post->ID ) );
-			$place->url = get_permalink( $post );
+			$place->url         = get_permalink( $post );
 			// Thumbnail URL
 			if ( has_post_thumbnail( $post->ID ) ) {
 				$image_size = apply_filters( 'stellar_places_image_size', 'thumbnail' );
-				$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $image_size );
+				$image      = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $image_size );
 				if ( ! empty( $image[0] ) ) {
 					$place->image = $image[0];
 				}
@@ -273,13 +273,15 @@ final class Stellar_Places {
 	 * @return Stellar_Places_Postal_Address
 	 */
 	public static function get_postal_address( Stellar_Places_Place_Model $place ) {
-		$postal_address = new Stellar_Places_Postal_Address( array(
-			'streetAddress'   => $place->streetAddress,
-			'addressLocality' => $place->addressLocality,
-			'addressRegion'   => $place->addressRegion,
-			'postalCode'      => $place->postalCode,
-			'addressCountry'  => $place->addressCountry,
-		) );
+		$postal_address = new Stellar_Places_Postal_Address(
+			array(
+				'streetAddress'   => $place->streetAddress,
+				'addressLocality' => $place->addressLocality,
+				'addressRegion'   => $place->addressRegion,
+				'postalCode'      => $place->postalCode,
+				'addressCountry'  => $place->addressCountry,
+			)
+		);
 
 		return $postal_address;
 	}
@@ -311,13 +313,13 @@ final class Stellar_Places {
 	 * @return Stellar_Places_Google_Map
 	 */
 	public static function get_static_map( Stellar_Places_Place_Model $place ) {
-		$map = new Stellar_Places_Google_Map( $place );
-		$map->infoWindows = false;
+		$map                                 = new Stellar_Places_Google_Map( $place );
+		$map->infoWindows                    = false;
 		$map->mapOptions['disableDefaultUI'] = true;
-		$map->mapOptions['draggable'] = false;
-		$map->mapOptions['maxZoom'] = 16;
-		$map->mapOptions['scrollwheel'] = false;
-		$map->mapOptions['styles'] = array(
+		$map->mapOptions['draggable']        = false;
+		$map->mapOptions['maxZoom']          = 16;
+		$map->mapOptions['scrollwheel']      = false;
+		$map->mapOptions['styles']           = array(
 			array(
 				'featureType' => 'poi',
 				'stylers'     => array(
@@ -341,10 +343,10 @@ final class Stellar_Places {
 	public static function get_excerpt_by_id( $post_id = 0 ) {
 		global $post;
 		$save_post = $post;
-		$post = get_post( $post_id );
+		$post      = get_post( $post_id );
 		setup_postdata( $post );
 		$excerpt = get_the_excerpt();
-		$post = $save_post;
+		$post    = $save_post;
 		wp_reset_postdata();
 
 		return $excerpt;

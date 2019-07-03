@@ -1,8 +1,8 @@
 <?php
-$post = get_post();
-$place = Stellar_Places::get_place_object( $post );
+$post    = get_post();
+$place   = Stellar_Places::get_place_object( $post );
 $address = Stellar_Places::get_postal_address( $place );
-$map = Stellar_Places::get_static_map( $place );
+$map     = Stellar_Places::get_static_map( $place );
 ?>
 
 <div class="stellar-places-single">

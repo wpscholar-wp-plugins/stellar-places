@@ -118,7 +118,7 @@ class Stellar_Places_Meta_Box_Model {
 			'nonce_name'   => '_wp_nonce_' . $html_id,
 			'nonce_action' => $html_id,
 		);
-		$args = wp_parse_args( $args, $defaults );
+		$args     = wp_parse_args( $args, $defaults );
 		foreach ( $args as $name => $value ) {
 			$this->$name = $value;
 		}
@@ -181,7 +181,7 @@ class Stellar_Places_Meta_Box_Model {
 	 * @return bool
 	 */
 	public function validate_context( $context ) {
-		return in_array( $context, array( 'normal', 'advanced', 'side' ) );
+		return in_array( $context, array( 'normal', 'advanced', 'side' ), true );
 	}
 
 	/**
@@ -256,7 +256,7 @@ class Stellar_Places_Meta_Box_Model {
 	 * @return bool
 	 */
 	public function validate_priority( $priority ) {
-		return in_array( $priority, array( 'high', 'core', 'default', 'low' ) );
+		return in_array( $priority, array( 'high', 'core', 'default', 'low' ), true );
 	}
 
 	/**
@@ -275,7 +275,7 @@ class Stellar_Places_Meta_Box_Model {
 	 * @return null|mixed
 	 */
 	public function __get( $name ) {
-		$value = null;
+		$value    = null;
 		$property = "_{$name}";
 		if ( property_exists( $this, $property ) ) {
 			$value = $this->$property;
@@ -291,10 +291,10 @@ class Stellar_Places_Meta_Box_Model {
 	 */
 	public function __set( $name, $value ) {
 		$property = "_{$name}";
-		$method = "set_{$name}";
+		$method   = "set_{$name}";
 		if ( method_exists( $this, $method ) && is_callable( array( $this, $method ) ) ) {
 			call_user_func( array( $this, $method ), $value );
-		} else if ( property_exists( $this, $property ) ) {
+		} elseif ( property_exists( $this, $property ) ) {
 			$this->$property = $value;
 		}
 	}

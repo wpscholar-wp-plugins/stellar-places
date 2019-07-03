@@ -84,23 +84,23 @@ class Stellar_Places_Map_Shortcode {
 
 		$map = new Stellar_Places_Google_Map( $query );
 
-		$map->autoZoom = true;
+		$map->autoZoom    = true;
 		$map->infoWindows = filter_var( $atts['infowindows'], FILTER_VALIDATE_BOOLEAN );
 
 		// Set HTML attributes
-		$map->id = $atts['id'];
-		$map->class = $atts['class'];
-		$map->width = $width;
+		$map->id     = $atts['id'];
+		$map->class  = $atts['class'];
+		$map->width  = $width;
 		$map->height = $height;
 
 		// Set map center coordinates
-		$map->latitude = $atts['lat'];
+		$map->latitude  = $atts['lat'];
 		$map->longitude = $atts['lng'];
 
 		// Set Google map options
-		$map->mapOptions['mapTypeId'] = strtoupper( $atts['maptypeid'] );
+		$map->mapOptions['mapTypeId']   = strtoupper( $atts['maptypeid'] );
 		$map->mapOptions['scrollwheel'] = filter_var( $atts['scrollwheel'], FILTER_VALIDATE_BOOLEAN );
-		$map->mapOptions['zoom'] = is_null( $atts['zoom'] ) ? null : absint( $atts['zoom'] );
+		$map->mapOptions['zoom']        = is_null( $atts['zoom'] ) ? null : absint( $atts['zoom'] );
 
 		// If zoom is set, disable auto zoom functionality
 		if ( ! is_null( $atts['zoom'] ) ) {

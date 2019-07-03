@@ -6,17 +6,17 @@
 class Stellar_Places_Google_Map {
 
 	// HTML Attributes
-	public $id = '';
-	public $class = '';
-	public $width = '100%';
+	public $id     = '';
+	public $class  = '';
+	public $width  = '100%';
 	public $height = '350px';
 
 	// Map Center
-	public $latitude = 0;
+	public $latitude  = 0;
 	public $longitude = 0;
 
 	// Custom Map Options
-	public $autoZoom = true;
+	public $autoZoom    = true;
 	public $infoWindows = true;
 
 	// Google Map Options
@@ -68,10 +68,10 @@ class Stellar_Places_Google_Map {
 			if ( is_a( $args, 'WP_Post' ) ) {
 				$post = $args;
 				$this->set_location( $post );
-			} else if ( is_a( $args, 'WP_Query' ) ) {
+			} elseif ( is_a( $args, 'WP_Query' ) ) {
 				$query = $args;
 				$this->set_locations( $query );
-			} else if ( is_a( $args, 'Stellar_Places_Place_Model' ) ) {
+			} elseif ( is_a( $args, 'Stellar_Places_Place_Model' ) ) {
 				$place = $args;
 				$this->add_location( $place );
 			}
@@ -94,7 +94,7 @@ class Stellar_Places_Google_Map {
 	 */
 	public function set_location( WP_Post $post ) {
 		$this->_locations = array();
-		$place = Stellar_Places::get_place_object( $post );
+		$place            = Stellar_Places::get_place_object( $post );
 		if ( $place ) {
 			$this->add_location( $place );
 		}
@@ -107,7 +107,7 @@ class Stellar_Places_Google_Map {
 	 */
 	public function set_locations( WP_Query $query ) {
 		$this->_locations = array();
-		$posts = $query->get_posts();
+		$posts            = $query->get_posts();
 		foreach ( $posts as $post ) {
 			$place = Stellar_Places::get_place_object( $post );
 			if ( $place ) {
@@ -123,17 +123,17 @@ class Stellar_Places_Google_Map {
 	 */
 	public function get_html() {
 
-		$class = join(
+		$class       = join(
 			' ',
 			array_merge(
 				array( 'stellar-places-map-canvas' ),
 				array_unique( array_filter( (array) explode( ' ', $this->class ) ) )
 			)
 		);
-		$style = "width: {$this->width}; height: {$this->height};";
-		$autoZoom = filter_var( $this->autoZoom, FILTER_VALIDATE_BOOLEAN ) ? 'true' : 'false';
+		$style       = "width: {$this->width}; height: {$this->height};";
+		$autoZoom    = filter_var( $this->autoZoom, FILTER_VALIDATE_BOOLEAN ) ? 'true' : 'false';
 		$infoWindows = filter_var( $this->infoWindows, FILTER_VALIDATE_BOOLEAN ) ? 'true' : 'false';
-		$mapOptions = array_filter( $this->mapOptions, array( $this, '_is_not_null' ) );
+		$mapOptions  = array_filter( $this->mapOptions, array( $this, '_is_not_null' ) );
 
 		// Load JS and CSS
 		wp_enqueue_script( 'stellar-places-map' );

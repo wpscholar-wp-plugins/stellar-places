@@ -37,11 +37,11 @@ class Stellar_Places_Pagination_Text {
 		$pagination_text = apply_filters( 'stellar_places_pagination_text', $pagination_text, $this->query );
 
 		// Get vars
-		$page = max( 1, $this->query->get( 'paged' ) );
+		$page           = max( 1, $this->query->get( 'paged' ) );
 		$posts_per_page = $this->query->get( 'posts_per_page' );
-		$first_result = ( $page * $posts_per_page ) - ( $posts_per_page - 1 );
-		$last_result = $page * $posts_per_page;
-		$total_results = $this->query->found_posts;
+		$first_result   = ( $page * $posts_per_page ) - ( $posts_per_page - 1 );
+		$last_result    = $page * $posts_per_page;
+		$total_results  = $this->query->found_posts;
 
 		// Render
 		printf( $pagination_text, $first_result, $last_result, $total_results );

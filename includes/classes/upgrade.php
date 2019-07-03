@@ -58,7 +58,7 @@ class Stellar_Places_Upgrade {
 	public function run_upgrades( array $upgrades ) {
 		foreach ( $upgrades as $version ) {
 			$file = rtrim( $this->upgrade_directory, '/' ) . '/' . $version . '.php';
-			require( $file );
+			require $file;
 		}
 	}
 
@@ -67,7 +67,7 @@ class Stellar_Places_Upgrade {
 	 */
 	public function upgrade() {
 		$available_upgrades = $this->get_available_upgrades();
-		$required_upgrades = $this->get_required_upgrades( $available_upgrades );
+		$required_upgrades  = $this->get_required_upgrades( $available_upgrades );
 		$this->run_upgrades( $required_upgrades );
 	}
 

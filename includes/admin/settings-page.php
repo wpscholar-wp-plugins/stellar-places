@@ -49,12 +49,13 @@ class Stellar_Places_Settings_Page {
 	public static function text_field( $args ) {
 		?>
 		<input type="text"
-		       class="widefat"
-		       name="<?php echo esc_attr( $args['name'] ) ?>"
-		       value="<?php echo esc_attr( get_option( $args['name'] ) ) ?>"/>
+			   class="widefat"
+			   name="<?php echo esc_attr( $args['name'] ); ?>"
+			   value="<?php echo esc_attr( get_option( $args['name'] ) ); ?>"/>
 		<?php if ( isset( $args['description'] ) ) { ?>
-			<p class="description"><?php echo $args['description'] ?></p>
-		<?php }
+			<p class="description"><?php echo $args['description']; ?></p>
+			<?php
+}
 	}
 
 	public static function render() {

@@ -17,7 +17,7 @@ class Stellar_Places_Meta_Box_View {
 	 *
 	 * @param Stellar_Places_Meta_Box_Model $model
 	 */
-	function __construct( Stellar_Places_Meta_Box_Model $model ) {
+	public function __construct( Stellar_Places_Meta_Box_Model $model ) {
 		$this->model = $model;
 		// Hook into the 'add_meta_boxes' action, but only for applicable post types
 		foreach ( (array) $this->model->post_type as $post_type ) {

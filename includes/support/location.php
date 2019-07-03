@@ -43,7 +43,7 @@ class Stellar_Places_Location_Support {
 		$queried_object = get_queried_object();
 		if ( is_singular( Stellar_Places::get_post_types() ) ) {
 			self::load_single_template();
-		} else if (
+		} elseif (
 			is_post_type_archive( Stellar_Places::get_post_types() ) ||
 			(
 				( is_tax() || is_category() || is_tag() ) &&
@@ -62,7 +62,7 @@ class Stellar_Places_Location_Support {
 		if ( $template ) {
 			wp_enqueue_style( 'stellar-places' );
 			ob_start();
-			include( $template );
+			include $template;
 			$content = ob_get_clean();
 			new Stellar_Places_Content_Prepender( $content );
 		}
@@ -76,7 +76,7 @@ class Stellar_Places_Location_Support {
 		if ( $template ) {
 			wp_enqueue_style( 'stellar-places' );
 			ob_start();
-			include( $template );
+			include $template;
 			$content = ob_get_clean();
 			new Stellar_Places_Loop_Prepender( $content );
 		}
@@ -101,7 +101,7 @@ class Stellar_Places_Location_Support {
 	 */
 	public static function render_meta_box() {
 		wp_enqueue_script( 'stellar-places-geocomplete' );
-		include( dirname( __FILE__ ) . '/views/location.php' );
+		include dirname( __FILE__ ) . '/views/location.php';
 	}
 
 	/**
@@ -121,8 +121,8 @@ class Stellar_Places_Location_Support {
 			'_stlr_places_longitude'         => 'sanitize_text_field',
 		);
 		foreach ( $fields as $field_name => $sanitization_callback ) {
-			if ( isset( $_POST[$field_name] ) ) {
-				$value = $_POST[$field_name];
+			if ( isset( $_POST[ $field_name ] ) ) {
+				$value = $_POST[ $field_name ];
 				if ( is_callable( $sanitization_callback ) ) {
 					$value = call_user_func( $sanitization_callback, $value );
 				}

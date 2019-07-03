@@ -81,8 +81,8 @@ class Stellar_Places_Google_Static_Map {
 	 */
 	function get_src() {
 		$parameters = array(
-			'size' => $this->size,
-			'zoom' => $this->zoom,
+			'size'  => $this->size,
+			'zoom'  => $this->zoom,
 			'scale' => 2,
 		);
 		if ( empty( $this->_markers ) ) {
@@ -115,11 +115,11 @@ class Stellar_Places_Google_Static_Map {
 	 */
 	function get_html() {
 		list( $width, $height ) = explode( 'x', $this->size );
-		$attributes = 'src="' . esc_url( $this->get_src() ) . '"';
-		$attributes .= 'width="' . esc_attr( $width ) . '"';
-		$attributes .= 'height="' . esc_attr( $height ) . '"';
-		$attributes .= 'alt="' . esc_attr( $this->alt ) . '"';
-		$html = '<img ' . $attributes . ' />';
+		$attributes             = 'src="' . esc_url( $this->get_src() ) . '"';
+		$attributes            .= 'width="' . esc_attr( $width ) . '"';
+		$attributes            .= 'height="' . esc_attr( $height ) . '"';
+		$attributes            .= 'alt="' . esc_attr( $this->alt ) . '"';
+		$html                   = '<img ' . $attributes . ' />';
 		return $html;
 	}
 
