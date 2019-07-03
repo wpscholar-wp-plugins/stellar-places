@@ -8,8 +8,5 @@
       "name": "Micah Wood",
       "email": "micah@wpscholar.com"
     }
-  ],
-  "require": {
-    "freemius/wordpress-sdk": "@stable"
-  }
+  ]
 }
