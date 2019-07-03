@@ -51,8 +51,9 @@ var config = {
 			'!**/gulp/**',
 			'!**/vendor',
 			'!**/vendor/**',
-			'!**/composer.json',
-			'!**/composer.lock'
+			'!**/**.json',
+			'!**/**.lock',
+			'!**/webpack.config.js',
 		],
 		dest: './svn/trunk',
 		clean: './svn/trunk/**/*'
