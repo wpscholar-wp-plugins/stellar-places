@@ -8,6 +8,7 @@
  * Author URI: https://wpscholar.com
  * Version: 1.1
  * Text Domain: stellar-places
+ * Domain Path: /languages
  * License: GPL3
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
  *

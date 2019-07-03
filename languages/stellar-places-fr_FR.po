@@ -1,0 +1,791 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Stellar Places\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-07-03 19:24+0000\n"
+"PO-Revision-Date: 2019-07-03 19:40+0000\n"
+"Last-Translator: wpscholar <micah@wpscholar.com>\n"
+"Language-Team: French (France)\n"
+"Language: fr_FR\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
+"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
+"_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
+"esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
+"esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
+"X-Loco-Target-Locale: fr_FR\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.3.0; wp-5.2.2"
+
+#: includes/plugin-check.php:127 svn/trunk/includes/plugin-check.php:127
+#: svn/tags/1.0.7/includes/plugin-check.php:127
+#: svn/tags/1.0.6/includes/plugin-check.php:127
+#: svn/tags/1.0.4/includes/plugin-check.php:127
+#: svn/tags/1.0.3/includes/plugin-check.php:127
+#: svn/tags/1.0.2/includes/plugin-check.php:127
+#: svn/tags/1.0.5/includes/plugin-check.php:127
+msgid " Please contact your web host about upgrading PHP."
+msgstr ""
+"Contactez\n"
+" \n"
+"votre\n"
+" \n"
+"hébergeur\n"
+" \n"
+"pour\n"
+" \n"
+"la mise à niveau\n"
+" de \n"
+"PHP\n"
+".\n"
+
+#: includes/plugin-check.php:122 svn/trunk/includes/plugin-check.php:122
+#, php-format
+msgid ""
+"%1$s requires PHP version %2$s or later. You are currently running version "
+"%3$s."
+msgstr ""
+"%1$s nécessite la version PHP %2$s ou ultérieure. Vous utilisez actuellement "
+"la version %3$s."
+
+#: includes/plugin-check.php:142 svn/trunk/includes/plugin-check.php:142
+#, php-format
+msgid "%1$s requires the %2$s PHP extension."
+msgstr "%1$s nécessite l'extension PHP %2$s."
+
+#: includes/plugin-check.php:160 svn/trunk/includes/plugin-check.php:160
+#, php-format
+msgid ""
+"%1$s requires WordPress version %2$s or later. You are currently running "
+"version %3$s."
+msgstr ""
+"%1$s nécessite la version WordPress %2$s ou une version ultérieure. Vous "
+"utilisez actuellement la version %3$s."
+
+#: svn/tags/1.0.7/includes/plugin-check.php:122
+#: svn/tags/1.0.6/includes/plugin-check.php:122
+#: svn/tags/1.0.4/includes/plugin-check.php:122
+#: svn/tags/1.0.3/includes/plugin-check.php:122
+#: svn/tags/1.0.2/includes/plugin-check.php:122
+#: svn/tags/1.0.5/includes/plugin-check.php:122
+#, php-format
+msgid ""
+"%s requires PHP version %s or later. You are currently running version %s."
+msgstr ""
+"%s\n"
+" \n"
+"requiert\n"
+" \n"
+"PHP\n"
+" \n"
+"version\n"
+" \n"
+"%s\n"
+" \n"
+"ou\n"
+" \n"
+"supérieure\n"
+".\n"
+" \n"
+"Vous\n"
+" \n"
+"utilisez\n"
+" \n"
+"actuellement\n"
+" la \n"
+"version\n"
+" \n"
+"%s\n"
+"."
+
+#: svn/tags/1.0.7/includes/plugin-check.php:142
+#: svn/tags/1.0.6/includes/plugin-check.php:142
+#: svn/tags/1.0.4/includes/plugin-check.php:142
+#: svn/tags/1.0.3/includes/plugin-check.php:142
+#: svn/tags/1.0.2/includes/plugin-check.php:142
+#: svn/tags/1.0.5/includes/plugin-check.php:142
+#, php-format
+msgid "%s requires the %s PHP extension."
+msgstr ""
+"%s\n"
+" \n"
+"nécessite\n"
+" \n"
+"l'extension\n"
+" \n"
+"PHP\n"
+" de \n"
+"%s\n"
+"."
+
+#: svn/tags/1.0.7/includes/plugin-check.php:160
+#: svn/tags/1.0.6/includes/plugin-check.php:160
+#: svn/tags/1.0.4/includes/plugin-check.php:160
+#: svn/tags/1.0.3/includes/plugin-check.php:160
+#: svn/tags/1.0.2/includes/plugin-check.php:160
+#: svn/tags/1.0.5/includes/plugin-check.php:160
+#, php-format
+msgid ""
+"%s requires WordPress version %s or later. You are currently running version "
+"%s."
+msgstr ""
+"%s\n"
+" \n"
+"requiert\n"
+" \n"
+"WordPress\n"
+" \n"
+"version\n"
+" \n"
+"%s\n"
+" \n"
+"ou\n"
+" \n"
+"supérieure\n"
+".\n"
+" \n"
+"Vous\n"
+" \n"
+"utilisez\n"
+" \n"
+"actuellement\n"
+" la \n"
+"version\n"
+" \n"
+"%s\n"
+"."
+
+#: includes/plugin-check.php:197 svn/trunk/includes/plugin-check.php:197
+#: svn/tags/1.0.7/includes/plugin-check.php:197
+#: svn/tags/1.0.6/includes/plugin-check.php:197
+#: svn/tags/1.0.4/includes/plugin-check.php:197
+#: svn/tags/1.0.3/includes/plugin-check.php:197
+#: svn/tags/1.0.2/includes/plugin-check.php:197
+#: svn/tags/1.0.5/includes/plugin-check.php:197
+#, php-format
+msgid "<p>The <strong>%s</strong> plugin has been deactivated.</p>"
+msgstr ""
+"<p>\n"
+"Le\n"
+" \n"
+"plugin\n"
+" <strong>\n"
+"%s\n"
+"</strong> \n"
+"a\n"
+" \n"
+"été\n"
+" \n"
+"désactivé\n"
+".\n"
+"</p>"
+
+#: includes/taxonomies/location-category.php:27
+#: svn/trunk/includes/taxonomies/location-category.php:27
+#: svn/tags/1.0/includes/taxonomies/location-category.php:21
+#: svn/tags/1.0.7/includes/taxonomies/location-category.php:21
+#: svn/tags/1.0.6/includes/taxonomies/location-category.php:21
+#: svn/tags/1.0.1/includes/taxonomies/location-category.php:21
+#: svn/tags/1.0.4/includes/taxonomies/location-category.php:21
+#: svn/tags/1.0.3/includes/taxonomies/location-category.php:21
+#: svn/tags/1.0.2/includes/taxonomies/location-category.php:21
+#: svn/tags/1.0.5/includes/taxonomies/location-category.php:21
+msgid "Add New Location Category"
+msgstr "Ajouter une nouvelle catégorie d'emplacement"
+
+#: includes/post-types/place.php:19 svn/trunk/includes/post-types/place.php:19
+#: svn/tags/1.0/includes/post-types/place.php:18
+#: svn/tags/1.0.7/includes/post-types/place.php:18
+#: svn/tags/1.0.6/includes/post-types/place.php:18
+#: svn/tags/1.0.1/includes/post-types/place.php:18
+#: svn/tags/1.0.4/includes/post-types/place.php:18
+#: svn/tags/1.0.3/includes/post-types/place.php:18
+#: svn/tags/1.0.2/includes/post-types/place.php:18
+#: svn/tags/1.0.5/includes/post-types/place.php:18
+msgid "Add New Place"
+msgstr "Ajouter un nouveau lieu"
+
+#. Description of the plugin
+msgid ""
+"An intuitive plugin for easily creating, managing and displaying locations "
+"using Google Maps."
+msgstr ""
+"Un plugin intuitif pour créer, gérer et afficher facilement des emplacements "
+"à l'aide de Google Maps."
+
+#: includes/support/views/location.php:131
+#: includes/support/views/location.php:136
+#: svn/trunk/includes/support/views/location.php:131
+#: svn/trunk/includes/support/views/location.php:136
+#: svn/tags/1.0/includes/support/views/location.php:121
+#: svn/tags/1.0/includes/support/views/location.php:125
+#: svn/tags/1.0.7/includes/support/views/location.php:127
+#: svn/tags/1.0.7/includes/support/views/location.php:131
+#: svn/tags/1.0.6/includes/support/views/location.php:127
+#: svn/tags/1.0.6/includes/support/views/location.php:131
+#: svn/tags/1.0.1/includes/support/views/location.php:121
+#: svn/tags/1.0.1/includes/support/views/location.php:125
+#: svn/tags/1.0.4/includes/support/views/location.php:127
+#: svn/tags/1.0.4/includes/support/views/location.php:131
+#: svn/tags/1.0.3/includes/support/views/location.php:127
+#: svn/tags/1.0.3/includes/support/views/location.php:131
+#: svn/tags/1.0.2/includes/support/views/location.php:121
+#: svn/tags/1.0.2/includes/support/views/location.php:125
+#: svn/tags/1.0.5/includes/support/views/location.php:127
+#: svn/tags/1.0.5/includes/support/views/location.php:131
+msgid "City"
+msgstr "Ville"
+
+#: includes/support/views/location.php:164
+#: includes/support/views/location.php:169
+#: svn/trunk/includes/support/views/location.php:164
+#: svn/trunk/includes/support/views/location.php:169
+#: svn/tags/1.0/includes/support/views/location.php:148
+#: svn/tags/1.0/includes/support/views/location.php:152
+#: svn/tags/1.0.7/includes/support/views/location.php:154
+#: svn/tags/1.0.7/includes/support/views/location.php:158
+#: svn/tags/1.0.6/includes/support/views/location.php:154
+#: svn/tags/1.0.6/includes/support/views/location.php:158
+#: svn/tags/1.0.1/includes/support/views/location.php:148
+#: svn/tags/1.0.1/includes/support/views/location.php:152
+#: svn/tags/1.0.4/includes/support/views/location.php:154
+#: svn/tags/1.0.4/includes/support/views/location.php:158
+#: svn/tags/1.0.3/includes/support/views/location.php:154
+#: svn/tags/1.0.3/includes/support/views/location.php:158
+#: svn/tags/1.0.2/includes/support/views/location.php:148
+#: svn/tags/1.0.2/includes/support/views/location.php:152
+#: svn/tags/1.0.5/includes/support/views/location.php:154
+#: svn/tags/1.0.5/includes/support/views/location.php:158
+msgid "Country"
+msgstr "Pays"
+
+#: includes/support/views/location.php:115
+#: svn/trunk/includes/support/views/location.php:115
+#: svn/tags/1.0/includes/support/views/location.php:107
+#: svn/tags/1.0.7/includes/support/views/location.php:113
+#: svn/tags/1.0.6/includes/support/views/location.php:113
+#: svn/tags/1.0.1/includes/support/views/location.php:107
+#: svn/tags/1.0.4/includes/support/views/location.php:113
+#: svn/tags/1.0.3/includes/support/views/location.php:113
+#: svn/tags/1.0.2/includes/support/views/location.php:107
+#: svn/tags/1.0.5/includes/support/views/location.php:113
+msgid "Drag marker to reposition."
+msgstr ""
+"Déplacer le m\n"
+"arqueur pour le repositionner."
+
+#: includes/taxonomies/location-category.php:24
+#: svn/trunk/includes/taxonomies/location-category.php:24
+#: svn/tags/1.0/includes/taxonomies/location-category.php:18
+#: svn/tags/1.0.7/includes/taxonomies/location-category.php:18
+#: svn/tags/1.0.6/includes/taxonomies/location-category.php:18
+#: svn/tags/1.0.1/includes/taxonomies/location-category.php:18
+#: svn/tags/1.0.4/includes/taxonomies/location-category.php:18
+#: svn/tags/1.0.3/includes/taxonomies/location-category.php:18
+#: svn/tags/1.0.2/includes/taxonomies/location-category.php:18
+#: svn/tags/1.0.5/includes/taxonomies/location-category.php:18
+msgid "Edit Location Category"
+msgstr ""
+"Modifier\n"
+" la catégorie de l'emplacement"
+
+#: includes/post-types/place.php:20 svn/trunk/includes/post-types/place.php:20
+#: svn/tags/1.0/includes/post-types/place.php:19
+#: svn/tags/1.0.7/includes/post-types/place.php:19
+#: svn/tags/1.0.6/includes/post-types/place.php:19
+#: svn/tags/1.0.1/includes/post-types/place.php:19
+#: svn/tags/1.0.4/includes/post-types/place.php:19
+#: svn/tags/1.0.3/includes/post-types/place.php:19
+#: svn/tags/1.0.2/includes/post-types/place.php:19
+#: svn/tags/1.0.5/includes/post-types/place.php:19
+msgid "Edit Place"
+msgstr "Mettre à jour le lieu"
+
+#: includes/support/views/location.php:107
+#: svn/trunk/includes/support/views/location.php:107
+#: svn/tags/1.0/includes/support/views/location.php:100
+#: svn/tags/1.0.7/includes/support/views/location.php:106
+#: svn/tags/1.0.6/includes/support/views/location.php:106
+#: svn/tags/1.0.1/includes/support/views/location.php:100
+#: svn/tags/1.0.4/includes/support/views/location.php:106
+#: svn/tags/1.0.3/includes/support/views/location.php:106
+#: svn/tags/1.0.2/includes/support/views/location.php:100
+#: svn/tags/1.0.5/includes/support/views/location.php:106
+msgid "Enter a location"
+msgstr "Entrez un emplacement"
+
+#: includes/support/views/location.php:111
+#: svn/trunk/includes/support/views/location.php:111
+#: svn/tags/1.0/includes/support/views/location.php:103
+#: svn/tags/1.0.7/includes/support/views/location.php:109
+#: svn/tags/1.0.6/includes/support/views/location.php:109
+#: svn/tags/1.0.1/includes/support/views/location.php:103
+#: svn/tags/1.0.4/includes/support/views/location.php:109
+#: svn/tags/1.0.3/includes/support/views/location.php:109
+#: svn/tags/1.0.2/includes/support/views/location.php:103
+#: svn/tags/1.0.5/includes/support/views/location.php:109
+msgid "Find"
+msgstr "Trouver"
+
+#: includes/admin/settings-page.php:30
+#: svn/trunk/includes/admin/settings-page.php:30
+#: svn/tags/1.0.7/includes/admin/settings-page.php:30
+#: svn/tags/1.0.6/includes/admin/settings-page.php:30
+msgid "Google Maps API"
+msgstr "API Google Maps"
+
+#: includes/admin/settings-page.php:37
+#: svn/trunk/includes/admin/settings-page.php:37
+#: svn/tags/1.0.7/includes/admin/settings-page.php:37
+#: svn/tags/1.0.6/includes/admin/settings-page.php:37
+msgid "Google Maps API Key"
+msgstr "Clé API Google Maps"
+
+#. Author URI of the plugin
+msgid "https://wpscholar.com"
+msgstr "https://wpscholar.com"
+
+#. URI of the plugin
+msgid "https://wpscholar.com/wordpress-plugins/stellar-places/"
+msgstr "https://wpscholar.com/wordpress-plugins/stellar-places/"
+
+#: includes/support/views/location.php:177
+#: includes/support/views/location.php:182
+#: svn/trunk/includes/support/views/location.php:177
+#: svn/trunk/includes/support/views/location.php:182
+#: svn/tags/1.0/includes/support/views/location.php:159
+#: svn/tags/1.0/includes/support/views/location.php:163
+#: svn/tags/1.0.7/includes/support/views/location.php:165
+#: svn/tags/1.0.7/includes/support/views/location.php:169
+#: svn/tags/1.0.6/includes/support/views/location.php:165
+#: svn/tags/1.0.6/includes/support/views/location.php:169
+#: svn/tags/1.0.1/includes/support/views/location.php:159
+#: svn/tags/1.0.1/includes/support/views/location.php:163
+#: svn/tags/1.0.4/includes/support/views/location.php:165
+#: svn/tags/1.0.4/includes/support/views/location.php:169
+#: svn/tags/1.0.3/includes/support/views/location.php:165
+#: svn/tags/1.0.3/includes/support/views/location.php:169
+#: svn/tags/1.0.2/includes/support/views/location.php:159
+#: svn/tags/1.0.2/includes/support/views/location.php:163
+#: svn/tags/1.0.5/includes/support/views/location.php:165
+#: svn/tags/1.0.5/includes/support/views/location.php:169
+msgid "Latitude"
+msgstr "Latitude"
+
+#: includes/support/location.php:91 svn/trunk/includes/support/location.php:91
+#: svn/tags/1.0/includes/support/location.php:79
+#: svn/tags/1.0.7/includes/support/location.php:91
+#: svn/tags/1.0.6/includes/support/location.php:91
+#: svn/tags/1.0.1/includes/support/location.php:91
+#: svn/tags/1.0.4/includes/support/location.php:91
+#: svn/tags/1.0.3/includes/support/location.php:91
+#: svn/tags/1.0.2/includes/support/location.php:91
+#: svn/tags/1.0.5/includes/support/location.php:91
+msgid "Location"
+msgstr "Emplacement"
+
+#: svn/tags/1.0/includes/taxonomies/location-category.php:16
+#: svn/tags/1.0.7/includes/taxonomies/location-category.php:16
+#: svn/tags/1.0.6/includes/taxonomies/location-category.php:16
+#: svn/tags/1.0.1/includes/taxonomies/location-category.php:16
+#: svn/tags/1.0.4/includes/taxonomies/location-category.php:16
+#: svn/tags/1.0.3/includes/taxonomies/location-category.php:16
+#: svn/tags/1.0.2/includes/taxonomies/location-category.php:16
+#: svn/tags/1.0.5/includes/taxonomies/location-category.php:16
+msgid "Location Categories"
+msgstr "Catégories des emplacements"
+
+#: svn/tags/1.0/includes/taxonomies/location-category.php:17
+#: svn/tags/1.0.7/includes/taxonomies/location-category.php:17
+#: svn/tags/1.0.6/includes/taxonomies/location-category.php:17
+#: svn/tags/1.0.1/includes/taxonomies/location-category.php:17
+#: svn/tags/1.0.4/includes/taxonomies/location-category.php:17
+#: svn/tags/1.0.3/includes/taxonomies/location-category.php:17
+#: svn/tags/1.0.2/includes/taxonomies/location-category.php:17
+#: svn/tags/1.0.5/includes/taxonomies/location-category.php:17
+msgid "Location Category"
+msgstr "Catégorie de l'emplacement"
+
+#: includes/support/views/location.php:188
+#: includes/support/views/location.php:193
+#: svn/trunk/includes/support/views/location.php:188
+#: svn/trunk/includes/support/views/location.php:193
+#: svn/tags/1.0/includes/support/views/location.php:168
+#: svn/tags/1.0/includes/support/views/location.php:172
+#: svn/tags/1.0.7/includes/support/views/location.php:174
+#: svn/tags/1.0.7/includes/support/views/location.php:178
+#: svn/tags/1.0.6/includes/support/views/location.php:174
+#: svn/tags/1.0.6/includes/support/views/location.php:178
+#: svn/tags/1.0.1/includes/support/views/location.php:168
+#: svn/tags/1.0.1/includes/support/views/location.php:172
+#: svn/tags/1.0.4/includes/support/views/location.php:174
+#: svn/tags/1.0.4/includes/support/views/location.php:178
+#: svn/tags/1.0.3/includes/support/views/location.php:174
+#: svn/tags/1.0.3/includes/support/views/location.php:178
+#: svn/tags/1.0.2/includes/support/views/location.php:168
+#: svn/tags/1.0.2/includes/support/views/location.php:172
+#: svn/tags/1.0.5/includes/support/views/location.php:174
+#: svn/tags/1.0.5/includes/support/views/location.php:178
+msgid "Longitude"
+msgstr "Longitude"
+
+#: includes/meta-boxes/meta-box-model.php:107
+#: svn/trunk/includes/meta-boxes/meta-box-model.php:107
+#: svn/tags/1.0.7/includes/meta-boxes/meta-box-model.php:107
+#: svn/tags/1.0.6/includes/meta-boxes/meta-box-model.php:107
+#: svn/tags/1.0.4/includes/meta-boxes/meta-box-model.php:107
+#: svn/tags/1.0.3/includes/meta-boxes/meta-box-model.php:107
+#: svn/tags/1.0.2/includes/meta-boxes/meta-box-model.php:107
+#: svn/tags/1.0.5/includes/meta-boxes/meta-box-model.php:107
+msgid "Meta box callback must be a callable function"
+msgstr ""
+"L'appel\n"
+" \n"
+"de la section\n"
+" \n"
+"Meta\n"
+" \n"
+"doit\n"
+" \n"
+"être\n"
+" \n"
+"une\n"
+" \n"
+"fonction\n"
+" \n"
+"accessible"
+
+#: includes/meta-boxes/meta-box-model.php:101
+#: svn/trunk/includes/meta-boxes/meta-box-model.php:101
+#: svn/tags/1.0.7/includes/meta-boxes/meta-box-model.php:101
+#: svn/tags/1.0.6/includes/meta-boxes/meta-box-model.php:101
+#: svn/tags/1.0.4/includes/meta-boxes/meta-box-model.php:101
+#: svn/tags/1.0.3/includes/meta-boxes/meta-box-model.php:101
+#: svn/tags/1.0.2/includes/meta-boxes/meta-box-model.php:101
+#: svn/tags/1.0.5/includes/meta-boxes/meta-box-model.php:101
+msgid "Meta box HTML id must be a string"
+msgstr ""
+"L'Id\n"
+" \n"
+"HTML\n"
+" de la section \n"
+"Meta\n"
+" \n"
+"doit\n"
+" \n"
+"être\n"
+" \n"
+"une\n"
+" \n"
+"chaîne de caractères"
+
+#: includes/meta-boxes/meta-box-model.php:104
+#: svn/trunk/includes/meta-boxes/meta-box-model.php:104
+#: svn/tags/1.0.7/includes/meta-boxes/meta-box-model.php:104
+#: svn/tags/1.0.6/includes/meta-boxes/meta-box-model.php:104
+#: svn/tags/1.0.4/includes/meta-boxes/meta-box-model.php:104
+#: svn/tags/1.0.3/includes/meta-boxes/meta-box-model.php:104
+#: svn/tags/1.0.2/includes/meta-boxes/meta-box-model.php:104
+#: svn/tags/1.0.5/includes/meta-boxes/meta-box-model.php:104
+msgid "Meta box title must be a string"
+msgstr "Le titre de la section Meta doit être une chaîne de caractères"
+
+#. Author of the plugin
+msgid "Micah Wood"
+msgstr "Micah Wood"
+
+#: includes/taxonomies/location-category.php:28
+#: svn/trunk/includes/taxonomies/location-category.php:28
+#: svn/tags/1.0/includes/taxonomies/location-category.php:22
+#: svn/tags/1.0.7/includes/taxonomies/location-category.php:22
+#: svn/tags/1.0.6/includes/taxonomies/location-category.php:22
+#: svn/tags/1.0.1/includes/taxonomies/location-category.php:22
+#: svn/tags/1.0.4/includes/taxonomies/location-category.php:22
+#: svn/tags/1.0.3/includes/taxonomies/location-category.php:22
+#: svn/tags/1.0.2/includes/taxonomies/location-category.php:22
+#: svn/tags/1.0.5/includes/taxonomies/location-category.php:22
+msgid "New Location Category Name"
+msgstr " Nouveau nom de catégorie d'emplacement"
+
+#: includes/post-types/place.php:21 svn/trunk/includes/post-types/place.php:21
+#: svn/tags/1.0/includes/post-types/place.php:20
+#: svn/tags/1.0.7/includes/post-types/place.php:20
+#: svn/tags/1.0.6/includes/post-types/place.php:20
+#: svn/tags/1.0.1/includes/post-types/place.php:20
+#: svn/tags/1.0.4/includes/post-types/place.php:20
+#: svn/tags/1.0.3/includes/post-types/place.php:20
+#: svn/tags/1.0.2/includes/post-types/place.php:20
+#: svn/tags/1.0.5/includes/post-types/place.php:20
+msgid "New Place"
+msgstr "Nouveau lieu"
+
+#: includes/post-types/place.php:24 svn/trunk/includes/post-types/place.php:24
+#: svn/tags/1.0/includes/post-types/place.php:23
+#: svn/tags/1.0.7/includes/post-types/place.php:23
+#: svn/tags/1.0.6/includes/post-types/place.php:23
+#: svn/tags/1.0.1/includes/post-types/place.php:23
+#: svn/tags/1.0.4/includes/post-types/place.php:23
+#: svn/tags/1.0.3/includes/post-types/place.php:23
+#: svn/tags/1.0.2/includes/post-types/place.php:23
+#: svn/tags/1.0.5/includes/post-types/place.php:23
+msgid "No places found"
+msgstr "Pas le lieu trouvé"
+
+#: includes/post-types/place.php:25 svn/trunk/includes/post-types/place.php:25
+#: svn/tags/1.0/includes/post-types/place.php:24
+#: svn/tags/1.0.7/includes/post-types/place.php:24
+#: svn/tags/1.0.6/includes/post-types/place.php:24
+#: svn/tags/1.0.1/includes/post-types/place.php:24
+#: svn/tags/1.0.4/includes/post-types/place.php:24
+#: svn/tags/1.0.3/includes/post-types/place.php:24
+#: svn/tags/1.0.2/includes/post-types/place.php:24
+#: svn/tags/1.0.5/includes/post-types/place.php:24
+msgid "No places found in trash"
+msgstr "Pas de lieu trouvé dans la corbeille"
+
+#: includes/taxonomies/location-category.php:29
+#: svn/trunk/includes/taxonomies/location-category.php:29
+#: svn/tags/1.0/includes/taxonomies/location-category.php:23
+#: svn/tags/1.0.7/includes/taxonomies/location-category.php:23
+#: svn/tags/1.0.6/includes/taxonomies/location-category.php:23
+#: svn/tags/1.0.1/includes/taxonomies/location-category.php:23
+#: svn/tags/1.0.4/includes/taxonomies/location-category.php:23
+#: svn/tags/1.0.3/includes/taxonomies/location-category.php:23
+#: svn/tags/1.0.2/includes/taxonomies/location-category.php:23
+#: svn/tags/1.0.5/includes/taxonomies/location-category.php:23
+msgid "Parent Location Category"
+msgstr "Catégorie d'emplacement parente"
+
+#: includes/taxonomies/location-category.php:30
+#: svn/trunk/includes/taxonomies/location-category.php:30
+#: svn/tags/1.0/includes/taxonomies/location-category.php:24
+#: svn/tags/1.0.7/includes/taxonomies/location-category.php:24
+#: svn/tags/1.0.6/includes/taxonomies/location-category.php:24
+#: svn/tags/1.0.1/includes/taxonomies/location-category.php:24
+#: svn/tags/1.0.4/includes/taxonomies/location-category.php:24
+#: svn/tags/1.0.3/includes/taxonomies/location-category.php:24
+#: svn/tags/1.0.2/includes/taxonomies/location-category.php:24
+#: svn/tags/1.0.5/includes/taxonomies/location-category.php:24
+msgid "Parent Location Category:"
+msgstr "Catégorie d'emplacement parente:"
+
+#: svn/tags/1.0/includes/post-types/place.php:17
+#: svn/tags/1.0.7/includes/post-types/place.php:17
+#: svn/tags/1.0.6/includes/post-types/place.php:17
+#: svn/tags/1.0.1/includes/post-types/place.php:17
+#: svn/tags/1.0.4/includes/post-types/place.php:17
+#: svn/tags/1.0.3/includes/post-types/place.php:17
+#: svn/tags/1.0.2/includes/post-types/place.php:17
+#: svn/tags/1.0.5/includes/post-types/place.php:17
+msgid "Place"
+msgstr "Lieu"
+
+#: includes/post-types/place.php:18 svn/trunk/includes/post-types/place.php:18
+msgctxt "place"
+msgid "Add New"
+msgstr "Ajouter un nouveau"
+
+#: svn/tags/1.0/includes/post-types/place.php:16
+#: svn/tags/1.0.7/includes/post-types/place.php:16
+#: svn/tags/1.0.6/includes/post-types/place.php:16
+#: svn/tags/1.0.1/includes/post-types/place.php:16
+#: svn/tags/1.0.4/includes/post-types/place.php:16
+#: svn/tags/1.0.3/includes/post-types/place.php:16
+#: svn/tags/1.0.2/includes/post-types/place.php:16
+#: svn/tags/1.0.5/includes/post-types/place.php:16
+msgid "Places"
+msgstr "Lieux"
+
+#: includes/post-types/place.php:16 svn/trunk/includes/post-types/place.php:16
+msgctxt "post type general name"
+msgid "Places"
+msgstr "Lieux"
+
+#: includes/post-types/place.php:17 svn/trunk/includes/post-types/place.php:17
+msgctxt "post type singular name"
+msgid "Place"
+msgstr "Endroit"
+
+#: includes/support/views/location.php:153
+#: includes/support/views/location.php:158
+#: svn/trunk/includes/support/views/location.php:153
+#: svn/trunk/includes/support/views/location.php:158
+#: svn/tags/1.0/includes/support/views/location.php:139
+#: svn/tags/1.0/includes/support/views/location.php:143
+#: svn/tags/1.0.7/includes/support/views/location.php:145
+#: svn/tags/1.0.7/includes/support/views/location.php:149
+#: svn/tags/1.0.6/includes/support/views/location.php:145
+#: svn/tags/1.0.6/includes/support/views/location.php:149
+#: svn/tags/1.0.1/includes/support/views/location.php:139
+#: svn/tags/1.0.1/includes/support/views/location.php:143
+#: svn/tags/1.0.4/includes/support/views/location.php:145
+#: svn/tags/1.0.4/includes/support/views/location.php:149
+#: svn/tags/1.0.3/includes/support/views/location.php:145
+#: svn/tags/1.0.3/includes/support/views/location.php:149
+#: svn/tags/1.0.2/includes/support/views/location.php:139
+#: svn/tags/1.0.2/includes/support/views/location.php:143
+#: svn/tags/1.0.5/includes/support/views/location.php:145
+#: svn/tags/1.0.5/includes/support/views/location.php:149
+msgid "Postal Code"
+msgstr "Code postal"
+
+#: includes/taxonomies/location-category.php:31
+#: svn/trunk/includes/taxonomies/location-category.php:31
+#: svn/tags/1.0/includes/taxonomies/location-category.php:25
+#: svn/tags/1.0.7/includes/taxonomies/location-category.php:25
+#: svn/tags/1.0.6/includes/taxonomies/location-category.php:25
+#: svn/tags/1.0.1/includes/taxonomies/location-category.php:25
+#: svn/tags/1.0.4/includes/taxonomies/location-category.php:25
+#: svn/tags/1.0.3/includes/taxonomies/location-category.php:25
+#: svn/tags/1.0.2/includes/taxonomies/location-category.php:25
+#: svn/tags/1.0.5/includes/taxonomies/location-category.php:25
+msgid "Search Location Categories"
+msgstr ""
+"Recherche de c\n"
+"atégories d'emplacement"
+
+#: includes/post-types/place.php:23 svn/trunk/includes/post-types/place.php:23
+#: svn/tags/1.0/includes/post-types/place.php:22
+#: svn/tags/1.0.7/includes/post-types/place.php:22
+#: svn/tags/1.0.6/includes/post-types/place.php:22
+#: svn/tags/1.0.1/includes/post-types/place.php:22
+#: svn/tags/1.0.4/includes/post-types/place.php:22
+#: svn/tags/1.0.3/includes/post-types/place.php:22
+#: svn/tags/1.0.2/includes/post-types/place.php:22
+#: svn/tags/1.0.5/includes/post-types/place.php:22
+msgid "Search Places"
+msgstr "Chercher les lieux"
+
+#: includes/admin/settings-page.php:17
+#: svn/trunk/includes/admin/settings-page.php:17
+#: svn/tags/1.0.7/includes/admin/settings-page.php:17
+#: svn/tags/1.0.6/includes/admin/settings-page.php:17
+msgid "Settings"
+msgstr "Réglages"
+
+#: includes/admin/settings-page.php:16
+#: svn/trunk/includes/admin/settings-page.php:16
+#: svn/tags/1.0.7/includes/admin/settings-page.php:16
+#: svn/tags/1.0.6/includes/admin/settings-page.php:16
+msgid "Settings - Stellar Places"
+msgstr "Paramètres - Lieux Stellaires"
+
+#: includes/classes/pagination-text.php:35
+#: svn/trunk/includes/classes/pagination-text.php:35
+#: svn/tags/1.0/includes/classes/pagination-text.php:35
+#: svn/tags/1.0.7/includes/classes/pagination-text.php:35
+#: svn/tags/1.0.6/includes/classes/pagination-text.php:35
+#: svn/tags/1.0.1/includes/classes/pagination-text.php:35
+#: svn/tags/1.0.4/includes/classes/pagination-text.php:35
+#: svn/tags/1.0.3/includes/classes/pagination-text.php:35
+#: svn/tags/1.0.2/includes/classes/pagination-text.php:35
+#: svn/tags/1.0.5/includes/classes/pagination-text.php:35
+#, php-format
+msgid "Showing results %1$d - %2$d of %3$d"
+msgstr "Voir les resultats %1$d - %2$d de %3$d"
+
+#: includes/support/views/location.php:142
+#: includes/support/views/location.php:147
+#: svn/trunk/includes/support/views/location.php:142
+#: svn/trunk/includes/support/views/location.php:147
+#: svn/tags/1.0/includes/support/views/location.php:130
+#: svn/tags/1.0/includes/support/views/location.php:134
+#: svn/tags/1.0.7/includes/support/views/location.php:136
+#: svn/tags/1.0.7/includes/support/views/location.php:140
+#: svn/tags/1.0.6/includes/support/views/location.php:136
+#: svn/tags/1.0.6/includes/support/views/location.php:140
+#: svn/tags/1.0.1/includes/support/views/location.php:130
+#: svn/tags/1.0.1/includes/support/views/location.php:134
+#: svn/tags/1.0.4/includes/support/views/location.php:136
+#: svn/tags/1.0.4/includes/support/views/location.php:140
+#: svn/tags/1.0.3/includes/support/views/location.php:136
+#: svn/tags/1.0.3/includes/support/views/location.php:140
+#: svn/tags/1.0.2/includes/support/views/location.php:130
+#: svn/tags/1.0.2/includes/support/views/location.php:134
+#: svn/tags/1.0.5/includes/support/views/location.php:136
+#: svn/tags/1.0.5/includes/support/views/location.php:140
+msgid "State"
+msgstr "Etat"
+
+#. Name of the plugin
+msgid "Stellar Places"
+msgstr "Lieux Stellaires"
+
+#: includes/support/views/location.php:120
+#: includes/support/views/location.php:125
+#: svn/trunk/includes/support/views/location.php:120
+#: svn/trunk/includes/support/views/location.php:125
+#: svn/tags/1.0/includes/support/views/location.php:112
+#: svn/tags/1.0/includes/support/views/location.php:116
+#: svn/tags/1.0.7/includes/support/views/location.php:118
+#: svn/tags/1.0.7/includes/support/views/location.php:122
+#: svn/tags/1.0.6/includes/support/views/location.php:118
+#: svn/tags/1.0.6/includes/support/views/location.php:122
+#: svn/tags/1.0.1/includes/support/views/location.php:112
+#: svn/tags/1.0.1/includes/support/views/location.php:116
+#: svn/tags/1.0.4/includes/support/views/location.php:118
+#: svn/tags/1.0.4/includes/support/views/location.php:122
+#: svn/tags/1.0.3/includes/support/views/location.php:118
+#: svn/tags/1.0.3/includes/support/views/location.php:122
+#: svn/tags/1.0.2/includes/support/views/location.php:112
+#: svn/tags/1.0.2/includes/support/views/location.php:116
+#: svn/tags/1.0.5/includes/support/views/location.php:118
+#: svn/tags/1.0.5/includes/support/views/location.php:122
+msgid "Street Address"
+msgstr "Adresse de la rue"
+
+#: includes/taxonomies/location-category.php:22
+#: svn/trunk/includes/taxonomies/location-category.php:22
+msgctxt "taxonomy general name"
+msgid "Location Categories"
+msgstr "Catégories de lieu"
+
+#: includes/taxonomies/location-category.php:23
+#: svn/trunk/includes/taxonomies/location-category.php:23
+msgctxt "taxonomy singular name"
+msgid "Location Category"
+msgstr "Catégorie de lieu"
+
+#: includes/taxonomies/location-category.php:26
+#: svn/trunk/includes/taxonomies/location-category.php:26
+#: svn/tags/1.0/includes/taxonomies/location-category.php:20
+#: svn/tags/1.0.7/includes/taxonomies/location-category.php:20
+#: svn/tags/1.0.6/includes/taxonomies/location-category.php:20
+#: svn/tags/1.0.1/includes/taxonomies/location-category.php:20
+#: svn/tags/1.0.4/includes/taxonomies/location-category.php:20
+#: svn/tags/1.0.3/includes/taxonomies/location-category.php:20
+#: svn/tags/1.0.2/includes/taxonomies/location-category.php:20
+#: svn/tags/1.0.5/includes/taxonomies/location-category.php:20
+msgid "Update Location Category"
+msgstr "Mettre à jour la catégorie de l'emplacement"
+
+#: includes/taxonomies/location-category.php:25
+#: svn/trunk/includes/taxonomies/location-category.php:25
+#: svn/tags/1.0/includes/taxonomies/location-category.php:19
+#: svn/tags/1.0.7/includes/taxonomies/location-category.php:19
+#: svn/tags/1.0.6/includes/taxonomies/location-category.php:19
+#: svn/tags/1.0.1/includes/taxonomies/location-category.php:19
+#: svn/tags/1.0.4/includes/taxonomies/location-category.php:19
+#: svn/tags/1.0.3/includes/taxonomies/location-category.php:19
+#: svn/tags/1.0.2/includes/taxonomies/location-category.php:19
+#: svn/tags/1.0.5/includes/taxonomies/location-category.php:19
+msgid "View Location Category"
+msgstr "Voir la catégorie de l'emplacement"
+
+#: includes/post-types/place.php:22 svn/trunk/includes/post-types/place.php:22
+#: svn/tags/1.0/includes/post-types/place.php:21
+#: svn/tags/1.0.7/includes/post-types/place.php:21
+#: svn/tags/1.0.6/includes/post-types/place.php:21
+#: svn/tags/1.0.1/includes/post-types/place.php:21
+#: svn/tags/1.0.4/includes/post-types/place.php:21
+#: svn/tags/1.0.3/includes/post-types/place.php:21
+#: svn/tags/1.0.2/includes/post-types/place.php:21
+#: svn/tags/1.0.5/includes/post-types/place.php:21
+msgid "View Place"
+msgstr "Voir le lieu"
