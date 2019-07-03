@@ -11,36 +11,38 @@ class Stellar_Places_Place {
 	 * Register post type
 	 */
 	public static function register_post_type() {
-		$args = array(
-			'labels'      => array(
-				'name'               => __( 'Places', 'stellar-places' ),
-				'singular_name'      => __( 'Place', 'stellar-places' ),
-				'add_new_item'       => __( 'Add New Place', 'stellar-places' ),
-				'edit_item'          => __( 'Edit Place', 'stellar-places' ),
-				'new_item'           => __( 'New Place', 'stellar-places' ),
-				'view_item'          => __( 'View Place', 'stellar-places' ),
-				'search_items'       => __( 'Search Places', 'stellar-places' ),
-				'not_found'          => __( 'No places found', 'stellar-places' ),
-				'not_found_in_trash' => __( 'No places found in trash', 'stellar-places' ),
-			),
-			'has_archive' => true,
-			'public'      => true,
-			'supports'    => array(
-				'title',
-				'editor',
-				'excerpt',
-				'thumbnail',
-				'stellar-places-location',
-			),
-			'rewrite'     => array(
-				'slug' => 'locations',
-				'with_front' => false,
-			),
-			'taxonomies'  => array( Stellar_Places_Location_Category::TAXONOMY ),
-			'menu_icon'   => 'dashicons-location-alt',
+		register_post_type( self::POST_TYPE, array(
+				'labels'       => array(
+					'name'               => esc_html_x( 'Places', 'post type general name', 'stellar-places' ),
+					'singular_name'      => esc_html_x( 'Place', 'post type singular name', 'stellar-places' ),
+					'add_new'            => esc_html_x( 'Add New', 'place', 'stellar-places' ),
+					'add_new_item'       => esc_html__( 'Add New Place', 'stellar-places' ),
+					'edit_item'          => esc_html__( 'Edit Place', 'stellar-places' ),
+					'new_item'           => esc_html__( 'New Place', 'stellar-places' ),
+					'view_item'          => esc_html__( 'View Place', 'stellar-places' ),
+					'search_items'       => esc_html__( 'Search Places', 'stellar-places' ),
+					'not_found'          => esc_html__( 'No places found', 'stellar-places' ),
+					'not_found_in_trash' => esc_html__( 'No places found in trash', 'stellar-places' ),
+				),
+				'public'       => true,
+				'has_archive'  => true,
+				'menu_icon'    => 'dashicons-location-alt',
+				'show_in_rest' => true,
+				'rest_base'    => 'locations',
+				'rewrite'      => array(
+					'slug'       => 'locations',
+					'with_front' => false,
+				),
+				'supports'     => array(
+					'title',
+					'editor',
+					'excerpt',
+					'thumbnail',
+					'stellar-places-location',
+				),
+				'taxonomies'   => array( Stellar_Places_Location_Category::TAXONOMY ),
+			)
 		);
-		$args = apply_filters( self::POST_TYPE . '-post_type_args', $args );
-		register_post_type( self::POST_TYPE, $args );
 	}
 
 }
