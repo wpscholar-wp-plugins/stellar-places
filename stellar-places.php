@@ -22,8 +22,8 @@ global $pagenow;
 if ( 'plugins.php' === $pagenow ) {
 	require dirname( __FILE__ ) . '/includes/plugin-check.php';
 	$plugin_check                  = new Stellar_Places_Plugin_Check( __FILE__ );
-	$plugin_check->min_php_version = '5.2';
-	$plugin_check->min_wp_version  = '4.5.0';
+	$plugin_check->min_php_version = '5.6';
+	$plugin_check->min_wp_version  = '5.2';
 	$plugin_check->check_plugin_requirements();
 }
 
