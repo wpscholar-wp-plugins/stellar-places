@@ -3,6 +3,7 @@
 .distignore         export-ignore
 .gitattributes      export-ignore
 .gitignore          export-ignore
+src/                export-ignore
 gulp/               export-ignore
 gulpfile.js         export-ignore
 package.json        export-ignore
