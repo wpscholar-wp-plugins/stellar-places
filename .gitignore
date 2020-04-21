@@ -1,11 +1,3 @@
-# Node.js
-node_modules
-
-# Composer
+/node_modules
 /vendor
-
-# SVN
-/svn
-
-# Project
 /assets

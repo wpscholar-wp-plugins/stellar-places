@@ -1,0 +1,13 @@
+.github/            export-ignore
+.wporg/             export-ignore
+.distignore         export-ignore
+.gitattributes      export-ignore
+.gitignore          export-ignore
+gulp/               export-ignore
+gulpfile.js         export-ignore
+package.json        export-ignore
+package-lock.json   export-ignore
+phpcs.xml           export-ignore
+README.md           export-ignore
+readme.md           export-ignore
+webpack.config.js   export-ignore
