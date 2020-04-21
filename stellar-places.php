@@ -18,11 +18,12 @@
 define( 'STELLAR_PLACES_VERSION', '1.1' );
 define( 'STELLAR_PLACES_FILE', __FILE__ );
 
+require dirname( __FILE__ ) . '/vendor/autoload.php';
+
 // Check plugin requirements
 global $pagenow;
 if ( 'plugins.php' === $pagenow ) {
-	require dirname( __FILE__ ) . '/includes/plugin-check.php';
-	$plugin_check                  = new Stellar_Places_Plugin_Check( __FILE__ );
+	$plugin_check                  = new WP_Forge_Plugin_Check( __FILE__ );
 	$plugin_check->min_php_version = '5.6';
 	$plugin_check->min_wp_version  = '5.2';
 	$plugin_check->check_plugin_requirements();
