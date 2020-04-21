@@ -21,10 +21,11 @@ class Stellar_Places_Location_Support {
 	/**
 	 * Locate template
 	 *
-	 * @param string $name
+	 * @param string $name Template name.
+	 *
 	 * @return string
 	 */
-	protected static function _locate_template( $name ) {
+	protected static function locate_template( $name ) {
 		$templates = array();
 		foreach ( Stellar_Places_Context::get_context() as $context ) {
 			$templates[] = "stellar-places/{$context}.php";
@@ -33,6 +34,7 @@ class Stellar_Places_Location_Support {
 		if ( empty( $template ) ) {
 			$template = dirname( STELLAR_PLACES_FILE ) . "/includes/templates/{$name}.php";
 		}
+
 		return $template;
 	}
 
@@ -58,7 +60,7 @@ class Stellar_Places_Location_Support {
 	 * Load the single.php template - shown before the content on single pages
 	 */
 	public static function load_single_template() {
-		$template = self::_locate_template( 'single' );
+		$template = self::locate_template( 'single' );
 		if ( $template ) {
 			wp_enqueue_style( 'stellar-places' );
 			ob_start();
@@ -72,7 +74,7 @@ class Stellar_Places_Location_Support {
 	 * Load the archive.php template - shown before the loop on archive pages
 	 */
 	public static function load_archive_template() {
-		$template = self::_locate_template( 'archive' );
+		$template = self::locate_template( 'archive' );
 		if ( $template ) {
 			wp_enqueue_style( 'stellar-places' );
 			ob_start();
@@ -107,7 +109,7 @@ class Stellar_Places_Location_Support {
 	/**
 	 * Save location fields
 	 *
-	 * @param int $post_id
+	 * @param int $post_id The post ID.
 	 */
 	public static function save_fields( $post_id ) {
 		$fields = array(
@@ -121,8 +123,8 @@ class Stellar_Places_Location_Support {
 			'_stlr_places_longitude'         => 'sanitize_text_field',
 		);
 		foreach ( $fields as $field_name => $sanitization_callback ) {
-			if ( isset( $_POST[ $field_name ] ) ) {
-				$value = $_POST[ $field_name ];
+			if ( isset( $_POST[ $field_name ] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Missing
+				$value = $_POST[ $field_name ]; // phpcs:ignore WordPress.Security.NonceVerification.Missing
 				if ( is_callable( $sanitization_callback ) ) {
 					$value = call_user_func( $sanitization_callback, $value );
 				}
@@ -131,15 +133,15 @@ class Stellar_Places_Location_Support {
 				delete_post_meta( $post_id, $field_name );
 			}
 		}
-		self::_set_geodata( $post_id );
+		self::set_geodata( $post_id );
 	}
 
 	/**
 	 * Set WordPress GeoData (http://codex.wordpress.org/Geodata)
 	 *
-	 * @param $post_id
+	 * @param string $post_id The post ID.
 	 */
-	protected static function _set_geodata( $post_id ) {
+	protected static function set_geodata( $post_id ) {
 		// Latitude
 		$latitude = get_post_meta( $post_id, '_stlr_places_latitude', true );
 		if ( $latitude ) {

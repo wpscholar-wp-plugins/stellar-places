@@ -11,7 +11,9 @@ class Stellar_Places_Place {
 	 * Register post type
 	 */
 	public static function register_post_type() {
-		register_post_type( self::POST_TYPE, array(
+		register_post_type(
+			self::POST_TYPE,
+			array(
 				'labels'       => array(
 					'name'               => esc_html_x( 'Places', 'post type general name', 'stellar-places' ),
 					'singular_name'      => esc_html_x( 'Place', 'post type singular name', 'stellar-places' ),

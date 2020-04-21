@@ -5,7 +5,12 @@
  */
 class Stellar_Places_Query extends WP_Query {
 
-	function __construct( $query = '' ) {
+	/**
+	 * Stellar_Places_Query constructor.
+	 *
+	 * @param string $query The query.
+	 */
+	public function __construct( $query = '' ) {
 		$query_args                 = wp_parse_args(
 			$query,
 			array(

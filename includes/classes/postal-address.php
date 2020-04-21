@@ -5,16 +5,45 @@
  */
 class Stellar_Places_Postal_Address {
 
-	public $streetAddress   = '';
+	/**
+	 * Street address.
+	 *
+	 * @var string
+	 */
+	public $streetAddress = '';
+
+	/**
+	 * City.
+	 *
+	 * @var string
+	 */
 	public $addressLocality = '';
-	public $addressRegion   = '';
-	public $postalCode      = '';
-	public $addressCountry  = '';
+
+	/**
+	 * State.
+	 *
+	 * @var string
+	 */
+	public $addressRegion = '';
+
+	/**
+	 * Zip code.
+	 *
+	 * @var string
+	 */
+	public $postalCode = '';
+
+	/**
+	 * Country.
+	 *
+	 * @var string
+	 */
+	public $addressCountry = '';
 
 	/**
 	 * Create a new instance
 	 *
-	 * @param array $address
+	 * @param array $address The address as an array.
 	 */
 	public function __construct( array $address = array() ) {
 		foreach ( $address as $field_name => $field_value ) {
@@ -27,7 +56,8 @@ class Stellar_Places_Postal_Address {
 	/**
 	 * Check if a postal address field is set
 	 *
-	 * @param string $field_name
+	 * @param string $field_name The postal address field name.
+	 *
 	 * @return bool
 	 */
 	public function has( $field_name ) {
@@ -41,14 +71,16 @@ class Stellar_Places_Postal_Address {
 	 */
 	public function has_data() {
 		$postal_address = $this->to_array();
+
 		return ! empty( $postal_address );
 	}
 
 	/**
 	 * Get HTML for a postal address field
 	 *
-	 * @param string $field_name
-	 * @param string $args
+	 * @param string $field_name The field name.
+	 * @param string $args       The field args.
+	 *
 	 * @return string
 	 */
 	public function get_field_html( $field_name, $args = '' ) {
@@ -66,11 +98,12 @@ class Stellar_Places_Postal_Address {
 			$html .= '<span itemprop="' . esc_attr( $field_name ) . '">';
 			$html .= esc_html( $this->$field_name );
 			$html .= '</span>';
-			if ( $field_name != $args['last'] && ! empty( $args['delimiter'] ) ) {
+			if ( $field_name !== $args['last'] && ! empty( $args['delimiter'] ) ) {
 				$html .= '<span class="delimiter">' . esc_html( $args['delimiter'] ) . '</span> ';
 			}
 			$html .= '</span>';
 		}
+
 		return apply_filters( 'stellar_places_postal_address_field_html', $html );
 	}
 
@@ -106,6 +139,7 @@ class Stellar_Places_Postal_Address {
 			}
 			$html .= '</span>';
 		}
+
 		return apply_filters( 'stellar_places_postal_address_html', $html );
 	}
 
@@ -113,7 +147,7 @@ class Stellar_Places_Postal_Address {
 	 * Render postal address HTML
 	 */
 	public function render() {
-		echo $this->get_html();
+		echo $this->get_html(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 
 	/**

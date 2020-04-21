@@ -43,12 +43,13 @@ class Stellar_Places_Google_Static_Map {
 	 *
 	 * @var array
 	 */
-	protected $_markers = array();
+	protected $markers = array();
 
 	/**
 	 * Convert a location array into a string
 	 *
-	 * @param array $location
+	 * @param array $location Geocoordinates.
+	 *
 	 * @return mixed
 	 */
 	public function get_location_string( array $location ) {
@@ -58,13 +59,13 @@ class Stellar_Places_Google_Static_Map {
 	/**
 	 * Add a marker to the map
 	 *
-	 * @param string $location
-	 * @param bool   $color
-	 * @param bool   $label
-	 * @param bool   $size
+	 * @param string $location Location.
+	 * @param bool   $color    Color.
+	 * @param bool   $label    Label.
+	 * @param bool   $size     Size.
 	 */
-	function add_marker( $location, $color = false, $label = false, $size = false ) {
-		$this->_markers[] = array_filter(
+	public function add_marker( $location, $color = false, $label = false, $size = false ) {
+		$this->markers[] = array_filter(
 			array(
 				'color'    => $color,
 				'label'    => $label,
@@ -79,22 +80,22 @@ class Stellar_Places_Google_Static_Map {
 	 *
 	 * @return string
 	 */
-	function get_src() {
+	public function get_src() {
 		$parameters = array(
 			'size'  => $this->size,
 			'zoom'  => $this->zoom,
 			'scale' => 2,
 		);
-		if ( empty( $this->_markers ) ) {
+		if ( empty( $this->markers ) ) {
 			$parameters['center'] = $this->center;
 		}
 		$query_string = http_build_query( $parameters );
-		if ( ! empty( $this->_markers ) ) {
+		if ( ! empty( $this->markers ) ) {
 			$markers = '';
-			foreach ( $this->_markers as $marker ) {
+			foreach ( $this->markers as $marker ) {
 				$properties = array();
 				foreach ( $marker as $name => $value ) {
-					if ( 'location' == $name ) {
+					if ( 'location' === $name ) {
 						$properties[] = $value;
 					} else {
 						$properties[] = "{$name}:{$value}";
@@ -105,6 +106,7 @@ class Stellar_Places_Google_Static_Map {
 			$query_string .= $markers;
 		}
 		$src = self::URL . $query_string;
+
 		return $src;
 	}
 
@@ -113,13 +115,14 @@ class Stellar_Places_Google_Static_Map {
 	 *
 	 * @return string
 	 */
-	function get_html() {
+	public function get_html() {
 		list( $width, $height ) = explode( 'x', $this->size );
 		$attributes             = 'src="' . esc_url( $this->get_src() ) . '"';
 		$attributes            .= 'width="' . esc_attr( $width ) . '"';
 		$attributes            .= 'height="' . esc_attr( $height ) . '"';
 		$attributes            .= 'alt="' . esc_attr( $this->alt ) . '"';
 		$html                   = '<img ' . $attributes . ' />';
+
 		return $html;
 	}
 

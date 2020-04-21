@@ -1,5 +1,7 @@
 <?php
 
+// phpcs:disable PSR2.Classes.PropertyDeclaration.Underscore
+
 /**
  * Class Stellar_Places_Meta_Box_Model
  *
@@ -89,11 +91,12 @@ class Stellar_Places_Meta_Box_Model {
 	/**
 	 * Instantiate the model
 	 *
-	 * @param string   $html_id
-	 * @param string   $title
-	 * @param callable $callback
-	 * @param array    $args
-	 * @throws InvalidArgumentException
+	 * @param string   $html_id  HTML ID of meta box.
+	 * @param string   $title    Title of meta box.
+	 * @param callable $callback Meta box render callback.
+	 * @param array    $args     Meta box arguments.
+	 *
+	 * @throws InvalidArgumentException If parameters are invalid.
 	 */
 	public function __construct( $html_id, $title, $callback, array $args = array() ) {
 		// Ensure required arguments are valid
@@ -127,7 +130,7 @@ class Stellar_Places_Meta_Box_Model {
 	/**
 	 * Set the callback function, if valid
 	 *
-	 * @param callable $callback
+	 * @param callable $callback Callable.
 	 */
 	public function set_callback( $callback ) {
 		if ( $this->validate_callback( $callback ) ) {
@@ -138,7 +141,8 @@ class Stellar_Places_Meta_Box_Model {
 	/**
 	 * Check to ensure callback is valid
 	 *
-	 * @param callable $callback
+	 * @param callable $callback Callable.
+	 *
 	 * @return bool
 	 */
 	public function validate_callback( $callback ) {
@@ -148,7 +152,7 @@ class Stellar_Places_Meta_Box_Model {
 	/**
 	 * Set the arguments to be passed to the callback function
 	 *
-	 * @param array $args
+	 * @param array $args Collection of arguments.
 	 */
 	public function set_callback_args( array $args ) {
 		$this->_callback_args = $args;
@@ -157,7 +161,7 @@ class Stellar_Places_Meta_Box_Model {
 	/**
 	 * Set the capability required to view the meta box
 	 *
-	 * @param string $capability
+	 * @param string $capability Capability name.
 	 */
 	public function set_capability( $capability ) {
 		$this->_capability = str_replace( '-', '_', sanitize_title_with_dashes( $capability ) );
@@ -166,7 +170,7 @@ class Stellar_Places_Meta_Box_Model {
 	/**
 	 * Set the context in which the meta box will be displayed, if valid
 	 *
-	 * @param string $context
+	 * @param string $context Meta box context.
 	 */
 	public function set_context( $context ) {
 		if ( $this->validate_context( $context ) ) {
@@ -177,7 +181,8 @@ class Stellar_Places_Meta_Box_Model {
 	/**
 	 * Validate the context
 	 *
-	 * @param string $context
+	 * @param string $context Meta box context.
+	 *
 	 * @return bool
 	 */
 	public function validate_context( $context ) {
@@ -187,7 +192,7 @@ class Stellar_Places_Meta_Box_Model {
 	/**
 	 * Set the HTML id attribute on the meta box
 	 *
-	 * @param string $html_id
+	 * @param string $html_id HTML ID of the meta box.
 	 */
 	public function set_id( $html_id ) {
 		$this->_id = esc_attr( $html_id );
@@ -196,7 +201,7 @@ class Stellar_Places_Meta_Box_Model {
 	/**
 	 * Set the nonce action
 	 *
-	 * @param string $nonce_action
+	 * @param string $nonce_action Nonce action.
 	 */
 	public function set_nonce_action( $nonce_action ) {
 		$this->_nonce_action = sanitize_title_with_dashes( $nonce_action );
@@ -205,7 +210,7 @@ class Stellar_Places_Meta_Box_Model {
 	/**
 	 * Set the nonce name
 	 *
-	 * @param string $nonce_name
+	 * @param string $nonce_name Nonce name.
 	 */
 	public function set_nonce_name( $nonce_name ) {
 		$this->_nonce_name = sanitize_title_with_dashes( $nonce_name );
@@ -214,7 +219,7 @@ class Stellar_Places_Meta_Box_Model {
 	/**
 	 * Set the post type(s) that should display the meta box, if valid
 	 *
-	 * @param string|array $post_types
+	 * @param string|array $post_types Post type(s).
 	 */
 	public function set_post_type( $post_types ) {
 		$valid_post_types = array();
@@ -231,7 +236,8 @@ class Stellar_Places_Meta_Box_Model {
 	/**
 	 * Validate a post type
 	 *
-	 * @param string $post_type
+	 * @param string $post_type Post type.
+	 *
 	 * @return bool
 	 */
 	public function validate_post_type( $post_type ) {
@@ -241,7 +247,7 @@ class Stellar_Places_Meta_Box_Model {
 	/**
 	 * Set the priority, if valid
 	 *
-	 * @param string $priority
+	 * @param string $priority Priority level.
 	 */
 	public function set_priority( $priority ) {
 		if ( $this->validate_priority( $priority ) ) {
@@ -252,7 +258,8 @@ class Stellar_Places_Meta_Box_Model {
 	/**
 	 * Validate the priority
 	 *
-	 * @param string $priority
+	 * @param string $priority Priority level.
+	 *
 	 * @return bool
 	 */
 	public function validate_priority( $priority ) {
@@ -262,7 +269,7 @@ class Stellar_Places_Meta_Box_Model {
 	/**
 	 * Set the meta box title
 	 *
-	 * @param string $title
+	 * @param string $title Meta box title.
 	 */
 	public function set_title( $title ) {
 		$this->_title = sanitize_text_field( $title );
@@ -271,7 +278,8 @@ class Stellar_Places_Meta_Box_Model {
 	/**
 	 * Magic method for getting property values
 	 *
-	 * @param string $name
+	 * @param string $name Property name.
+	 *
 	 * @return null|mixed
 	 */
 	public function __get( $name ) {
@@ -280,14 +288,15 @@ class Stellar_Places_Meta_Box_Model {
 		if ( property_exists( $this, $property ) ) {
 			$value = $this->$property;
 		}
+
 		return $value;
 	}
 
 	/**
 	 * Magic method for setting property values
 	 *
-	 * @param string $name
-	 * @param mixed  $value
+	 * @param string $name  Property name.
+	 * @param mixed  $value Property value.
 	 */
 	public function __set( $name, $value ) {
 		$property = "_{$name}";

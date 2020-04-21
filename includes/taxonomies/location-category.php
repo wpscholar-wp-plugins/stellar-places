@@ -17,7 +17,10 @@ class Stellar_Places_Location_Category {
 	 */
 	public static function register_taxonomy() {
 
-		register_taxonomy( self::TAXONOMY, array(), array(
+		register_taxonomy(
+			self::TAXONOMY,
+			array(),
+			array(
 				'labels'            => array(
 					'name'              => esc_html_x( 'Location Categories', 'taxonomy general name', 'stellar-places' ),
 					'singular_name'     => esc_html_x( 'Location Category', 'taxonomy singular name', 'stellar-places' ),
@@ -42,7 +45,7 @@ class Stellar_Places_Location_Category {
 				),
 				'supports'          => array(
 					'stellar-places-location',
-				)
+				),
 			)
 		);
 

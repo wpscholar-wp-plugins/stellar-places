@@ -1,5 +1,5 @@
 <?php
-$map             = Stellar_Places::get_map();
+$stellar_map     = Stellar_Places::get_map();
 $pagination_text = new Stellar_Places_Pagination_Text();
 ?>
 
@@ -9,6 +9,6 @@ $pagination_text = new Stellar_Places_Pagination_Text();
 		<div class="stellar-places-results-text"><?php $pagination_text->render(); ?></div>
 	<?php endif; ?>
 
-	<?php $map->render(); ?>
+	<?php $stellar_map->render(); ?>
 
 </div>

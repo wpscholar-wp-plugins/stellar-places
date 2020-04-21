@@ -26,13 +26,15 @@ class Stellar_Places_Upgrade {
 	 */
 	public function get_available_upgrades() {
 		$files = array_map( 'basename', glob( rtrim( $this->upgrade_directory, '/' ) . '/*.php' ) );
+
 		return str_replace( '.php', '', $files );
 	}
 
 	/**
 	 * Get a list of version numbers for which there are required upgrades
 	 *
-	 * @param array $available_upgrades
+	 * @param array $available_upgrades List of available upgrade routines.
+	 *
 	 * @return array
 	 */
 	public function get_required_upgrades( array $available_upgrades ) {
@@ -42,9 +44,10 @@ class Stellar_Places_Upgrade {
 	/**
 	 * Filter used to find required upgrades
 	 *
-	 * @see get_required_upgrades()
-	 * @param string $version
+	 * @param string $version Plugin version.
+	 *
 	 * @return bool
+	 * @see get_required_upgrades()
 	 */
 	public function filter_upgrades( $version ) {
 		return version_compare( $this->previous_version, $version, '<' );
@@ -53,7 +56,7 @@ class Stellar_Places_Upgrade {
 	/**
 	 * Run upgrades
 	 *
-	 * @param array $upgrades
+	 * @param array $upgrades Upgrade routines to be run.
 	 */
 	public function run_upgrades( array $upgrades ) {
 		foreach ( $upgrades as $version ) {

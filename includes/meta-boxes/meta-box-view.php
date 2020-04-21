@@ -15,7 +15,7 @@ class Stellar_Places_Meta_Box_View {
 	/**
 	 * Store the model and setup the meta box for display
 	 *
-	 * @param Stellar_Places_Meta_Box_Model $model
+	 * @param Stellar_Places_Meta_Box_Model $model Meta box model.
 	 */
 	public function __construct( Stellar_Places_Meta_Box_Model $model ) {
 		$this->model = $model;
@@ -28,7 +28,7 @@ class Stellar_Places_Meta_Box_View {
 	/**
 	 * Add the meta box
 	 *
-	 * @param WP_Post $post
+	 * @param WP_Post $post The post object.
 	 */
 	public function add_meta_box( WP_Post $post ) {
 		// Add meta box only if user has the proper capability
@@ -48,8 +48,8 @@ class Stellar_Places_Meta_Box_View {
 	/**
 	 * Render the meta box
 	 *
-	 * @param WP_Post $post
-	 * @param object  $box Contains the callback arguments along with other data on the current meta box
+	 * @param WP_Post $post The post object.
+	 * @param object  $box  Contains the callback arguments along with other data on the current meta box
 	 */
 	public function render_meta_box( WP_Post $post, $box ) {
 		// Automate the display of the nonce field

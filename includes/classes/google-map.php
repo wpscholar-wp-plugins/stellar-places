@@ -5,21 +5,67 @@
  */
 class Stellar_Places_Google_Map {
 
-	// HTML Attributes
-	public $id     = '';
-	public $class  = '';
-	public $width  = '100%';
+	/**
+	 * HTML ID.
+	 *
+	 * @var string
+	 */
+	public $id = '';
+
+	/**
+	 * HTML class.
+	 *
+	 * @var string
+	 */
+	public $class = '';
+
+	/**
+	 * HTML element width.
+	 *
+	 * @var string
+	 */
+	public $width = '100%';
+
+	/**
+	 * HTML element height.
+	 *
+	 * @var string
+	 */
 	public $height = '350px';
 
-	// Map Center
-	public $latitude  = 0;
+	/**
+	 * Map center - latitude.
+	 *
+	 * @var int
+	 */
+	public $latitude = 0;
+
+	/**
+	 * Map center - longitude.
+	 *
+	 * @var int
+	 */
 	public $longitude = 0;
 
-	// Custom Map Options
-	public $autoZoom    = true;
+	/**
+	 * Map option: autoZoom
+	 *
+	 * @var bool
+	 */
+	public $autoZoom = true;
+
+	/**
+	 * Map option: infoWindows
+	 *
+	 * @var bool
+	 */
 	public $infoWindows = true;
 
-	// Google Map Options
+	/**
+	 * Google Map Options
+	 *
+	 * @var array
+	 */
 	public $mapOptions = array(
 		'backgroundColor'           => null,
 		'disableDefaultUI'          => null,
@@ -55,13 +101,17 @@ class Stellar_Places_Google_Map {
 		'zoomControlOptions'        => null,
 	);
 
-	// Locations
-	protected $_locations = array();
+	/**
+	 * Locations
+	 *
+	 * @var array
+	 */
+	protected $locations = array();
 
 	/**
 	 * Instantiate class
 	 *
-	 * @param mixed $args
+	 * @param mixed $args Arguments.
 	 */
 	public function __construct( $args = null ) {
 		if ( is_object( $args ) ) {
@@ -81,20 +131,20 @@ class Stellar_Places_Google_Map {
 	/**
 	 * Add a location
 	 *
-	 * @param Stellar_Places_Place_Model $place
+	 * @param Stellar_Places_Place_Model $place Place model.
 	 */
 	public function add_location( Stellar_Places_Place_Model $place ) {
-		$this->_locations[] = $place;
+		$this->locations[] = $place;
 	}
 
 	/**
 	 * Add a location
 	 *
-	 * @param WP_Post $post
+	 * @param WP_Post $post The post object.
 	 */
 	public function set_location( WP_Post $post ) {
-		$this->_locations = array();
-		$place            = Stellar_Places::get_place_object( $post );
+		$this->locations = array();
+		$place           = Stellar_Places::get_place_object( $post );
 		if ( $place ) {
 			$this->add_location( $place );
 		}
@@ -103,11 +153,11 @@ class Stellar_Places_Google_Map {
 	/**
 	 * Set all locations at once
 	 *
-	 * @param WP_Query $query
+	 * @param WP_Query $query The query object.
 	 */
 	public function set_locations( WP_Query $query ) {
-		$this->_locations = array();
-		$posts            = $query->get_posts();
+		$this->locations = array();
+		$posts           = $query->get_posts();
 		foreach ( $posts as $post ) {
 			$place = Stellar_Places::get_place_object( $post );
 			if ( $place ) {
@@ -133,7 +183,7 @@ class Stellar_Places_Google_Map {
 		$style       = "width: {$this->width}; height: {$this->height};";
 		$autoZoom    = filter_var( $this->autoZoom, FILTER_VALIDATE_BOOLEAN ) ? 'true' : 'false';
 		$infoWindows = filter_var( $this->infoWindows, FILTER_VALIDATE_BOOLEAN ) ? 'true' : 'false';
-		$mapOptions  = array_filter( $this->mapOptions, array( $this, '_is_not_null' ) );
+		$mapOptions  = array_filter( $this->mapOptions, array( $this, 'is_not_null' ) );
 
 		// Load JS and CSS
 		wp_enqueue_script( 'stellar-places-map' );
@@ -148,15 +198,17 @@ class Stellar_Places_Google_Map {
 
 		ob_start();
 		?>
-		<div id="<?php echo esc_attr( $this->id ); ?>"
-				 class="<?php echo esc_attr( $class ); ?>"
-				 style="<?php echo esc_attr( $style ); ?>"
-				 data-stellar-places-map-auto-zoom="<?php echo esc_attr( $autoZoom ); ?>"
-				 data-stellar-places-map-info-windows="<?php echo esc_attr( $infoWindows ); ?>"
-				 data-stellar-places-map-lat="<?php echo esc_attr( $this->latitude ); ?>"
-				 data-stellar-places-map-lng="<?php echo esc_attr( $this->longitude ); ?>"
-				 data-stellar-places-map-locations="<?php echo esc_attr( json_encode( $this->_locations ) ); ?>"
-				 data-stellar-places-map-options="<?php echo esc_attr( json_encode( $mapOptions ) ); ?>"></div>
+		<div
+			id="<?php echo esc_attr( $this->id ); ?>"
+			class="<?php echo esc_attr( $class ); ?>"
+			style="<?php echo esc_attr( $style ); ?>"
+			data-stellar-places-map-auto-zoom="<?php echo esc_attr( $autoZoom ); ?>"
+			data-stellar-places-map-info-windows="<?php echo esc_attr( $infoWindows ); ?>"
+			data-stellar-places-map-lat="<?php echo esc_attr( $this->latitude ); ?>"
+			data-stellar-places-map-lng="<?php echo esc_attr( $this->longitude ); ?>"
+			data-stellar-places-map-locations="<?php echo esc_attr( wp_json_encode( $this->locations ) ); ?>"
+			data-stellar-places-map-options="<?php echo esc_attr( wp_json_encode( $mapOptions ) ); ?>"
+		></div>
 		<?php
 		return ob_get_clean();
 	}
@@ -165,7 +217,7 @@ class Stellar_Places_Google_Map {
 	 * Render map
 	 */
 	public function render() {
-		echo $this->get_html();
+		echo $this->get_html(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 
 	/**
@@ -177,17 +229,18 @@ class Stellar_Places_Google_Map {
 			$template = dirname( STELLAR_PLACES_FILE ) . '/includes/templates/info-window.html';
 		}
 		echo '<script type="text/template" id="stellar-places-info-window-template">';
-		echo file_get_contents( $template );
+		echo file_get_contents( $template ); // phpcs:ignore
 		echo '</script>';
 	}
 
 	/**
 	 * Helper function to check if a value is not null
 	 *
-	 * @param mixed $value
+	 * @param mixed $value The value.
+	 *
 	 * @return bool
 	 */
-	protected function _is_not_null( $value ) {
+	protected function is_not_null( $value ) {
 		return ! is_null( $value );
 	}
 

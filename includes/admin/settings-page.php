@@ -5,11 +5,17 @@
  */
 class Stellar_Places_Settings_Page {
 
+	/**
+	 * Initialization function.
+	 */
 	public static function initialize() {
 		add_action( 'admin_menu', array( __CLASS__, 'add_submenu_page' ) );
 		add_action( 'admin_init', array( __CLASS__, 'settings_init' ) );
 	}
 
+	/**
+	 * Add a submenu page.
+	 */
 	public static function add_submenu_page() {
 		add_submenu_page(
 			'edit.php?post_type=stlr_place',
@@ -21,6 +27,9 @@ class Stellar_Places_Settings_Page {
 		);
 	}
 
+	/**
+	 * Register settings.
+	 */
 	public static function settings_init() {
 
 		register_setting( 'stellar-places-settings', 'stellar_places_google_maps_api_key', 'sanitize_text_field' );
@@ -46,18 +55,28 @@ class Stellar_Places_Settings_Page {
 
 	}
 
+	/**
+	 * Display a text field.
+	 *
+	 * @param array $args Field args.
+	 */
 	public static function text_field( $args ) {
 		?>
-		<input type="text"
-			   class="widefat"
-			   name="<?php echo esc_attr( $args['name'] ); ?>"
-			   value="<?php echo esc_attr( get_option( $args['name'] ) ); ?>"/>
+		<input
+			type="text"
+			class="widefat"
+			name="<?php echo esc_attr( $args['name'] ); ?>"
+			value="<?php echo esc_attr( get_option( $args['name'] ) ); ?>"
+		/>
 		<?php if ( isset( $args['description'] ) ) { ?>
-			<p class="description"><?php echo $args['description']; ?></p>
+			<p class="description"><?php echo $args['description']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 			<?php
-}
+		}
 	}
 
+	/**
+	 * Render the page.
+	 */
 	public static function render() {
 		?>
 		<form action='options.php' method='post'>

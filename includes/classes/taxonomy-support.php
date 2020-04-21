@@ -8,8 +8,8 @@ class Stellar_Places_Taxonomy_Support {
 	/**
 	 * Add taxonomy support for a specific feature
 	 *
-	 * @param string $taxonomy
-	 * @param string $feature
+	 * @param string $taxonomy Taxonomy name.
+	 * @param string $feature  Feature name.
 	 */
 	public static function add_taxonomy_support( $taxonomy, $feature ) {
 		global $wp_taxonomies;
@@ -25,8 +25,8 @@ class Stellar_Places_Taxonomy_Support {
 	/**
 	 * Remove taxonomy support for a specific feature
 	 *
-	 * @param string $taxonomy
-	 * @param string $feature
+	 * @param string $taxonomy Taxonomy name.
+	 * @param string $feature  Feature name.
 	 */
 	public static function remove_taxonomy_support( $taxonomy, $feature ) {
 		global $wp_taxonomies;
@@ -40,16 +40,18 @@ class Stellar_Places_Taxonomy_Support {
 	/**
 	 * Checks if a taxonomy supports a specific feature
 	 *
-	 * @param string $taxonomy
-	 * @param string $feature
+	 * @param string $taxonomy Taxonomy name.
+	 * @param string $feature  Feature name.
+	 *
 	 * @return bool
 	 */
 	public static function taxonomy_supports( $taxonomy, $feature ) {
 		global $wp_taxonomies;
+
 		return (
 			isset( $wp_taxonomies[ $taxonomy ]->supports ) &&
 			is_array( $wp_taxonomies[ $taxonomy ]->supports ) &&
-			in_array( $feature, $wp_taxonomies[ $taxonomy ]->supports )
+			in_array( $feature, $wp_taxonomies[ $taxonomy ]->supports, true )
 		);
 	}
 
@@ -58,7 +60,8 @@ class Stellar_Places_Taxonomy_Support {
 	 * NOTE: I think that get_taxonomy_features() is a better name, but the naming was selected to match the WordPress
 	 * core function get_all_post_type_supports().
 	 *
-	 * @param string $taxonomy
+	 * @param string $taxonomy Taxonomy name.
+	 *
 	 * @return array
 	 */
 	public static function get_all_taxonomy_supports( $taxonomy ) {
@@ -69,13 +72,15 @@ class Stellar_Places_Taxonomy_Support {
 				$features = $wp_taxonomies[ $taxonomy ]->supports;
 			}
 		}
+
 		return $features;
 	}
 
 	/**
 	 * Fetch a list of all taxonomies that support a specific feature
 	 *
-	 * @param string $feature
+	 * @param string $feature Feature name.
+	 *
 	 * @return array
 	 */
 	public static function get_taxonomies_that_support( $feature ) {
@@ -86,6 +91,7 @@ class Stellar_Places_Taxonomy_Support {
 				$supported_taxonomies[] = $taxonomy;
 			}
 		}
+
 		return $supported_taxonomies;
 	}
 

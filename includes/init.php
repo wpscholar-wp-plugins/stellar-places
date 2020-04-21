@@ -5,9 +5,19 @@
  */
 final class Stellar_Places {
 
-	protected static $_instance;
+	/**
+	 * The class instance.
+	 *
+	 * @var self
+	 */
+	protected static $instance;
 
-	protected static $_class_map = array(
+	/**
+	 * Class map.
+	 *
+	 * @var array
+	 */
+	protected static $class_map = array(
 		'Stellar_Places_Content_Prepender'   => '/classes/content-prepender.php',
 		'Stellar_Places_Context'             => '/classes/context.php',
 		'Stellar_Places_Google_Map'          => '/classes/google-map.php',
@@ -34,7 +44,7 @@ final class Stellar_Places {
 	 */
 	protected function __construct() {
 
-		spl_autoload_register( array( $this, '_autoload' ) );
+		spl_autoload_register( array( $this, 'autoload' ) );
 
 		if ( is_admin() ) {
 			$this->upgrade();
@@ -73,27 +83,30 @@ final class Stellar_Places {
 	 * @return Stellar_Places
 	 */
 	public static function get_instance() {
-		if ( ! isset( self::$_instance ) ) {
-			self::$_instance = new self();
+		if ( ! isset( self::$instance ) ) {
+			self::$instance = new self();
 		}
 
-		return self::$_instance;
+		return self::$instance;
 	}
 
 	/**
 	 * Class autoloader
 	 *
-	 * @param string $class_name
+	 * @param string $class_name The class name.
 	 */
-	protected function _autoload( $class_name ) {
-		if ( array_key_exists( $class_name, self::$_class_map ) ) {
-			$file = dirname( __FILE__ ) . self::$_class_map[ $class_name ];
+	protected function autoload( $class_name ) {
+		if ( array_key_exists( $class_name, self::$class_map ) ) {
+			$file = dirname( __FILE__ ) . self::$class_map[ $class_name ];
 			if ( file_exists( $file ) ) {
 				include $file;
 			}
 		}
 	}
 
+	/**
+	 * Run upgrade routines, if necessary.
+	 */
 	public function upgrade() {
 		$previous_version = get_option( 'stellar_places_version' );
 		if ( STELLAR_PLACES_VERSION !== $previous_version ) {
@@ -152,25 +165,29 @@ final class Stellar_Places {
 			'google-maps-js-api',
 			'//maps.googleapis.com/maps/api/js',
 			array(),
-			null
+			STELLAR_PLACES_VERSION,
+			true
 		);
 		wp_register_script(
 			'google-maps-js-api-places-library',
 			'//maps.googleapis.com/maps/api/js?libraries=places',
 			array(),
-			null
+			STELLAR_PLACES_VERSION,
+			true
 		);
 		wp_register_script(
 			'stellar-places-geocomplete',
 			plugins_url( "/assets/js/jquery.geocomplete{$suffix}.js", STELLAR_PLACES_FILE ),
 			array( 'jquery', 'google-maps-js-api-places-library' ),
-			'1.4'
+			STELLAR_PLACES_VERSION,
+			true
 		);
 		wp_register_script(
 			'stellar-places-map',
 			plugins_url( "/assets/js/stellar-places-map{$suffix}.js", STELLAR_PLACES_FILE ),
 			array( 'backbone', 'google-maps-js-api' ),
-			STELLAR_PLACES_VERSION
+			STELLAR_PLACES_VERSION,
+			true
 		);
 	}
 
@@ -195,7 +212,7 @@ final class Stellar_Places {
 	/**
 	 * Get a collection of place objects
 	 *
-	 * @param string|array $query
+	 * @param string|array $query The query.
 	 *
 	 * @return array
 	 */
@@ -220,7 +237,7 @@ final class Stellar_Places {
 	/**
 	 * Get a place object given a $post
 	 *
-	 * @param WP_Post $post
+	 * @param WP_Post $post The post object.
 	 *
 	 * @return Stellar_Places_Place_Model
 	 */
@@ -268,7 +285,7 @@ final class Stellar_Places {
 	/**
 	 * Get a postal address
 	 *
-	 * @param Stellar_Places_Place_Model $place
+	 * @param Stellar_Places_Place_Model $place The place model.
 	 *
 	 * @return Stellar_Places_Postal_Address
 	 */
@@ -289,7 +306,7 @@ final class Stellar_Places {
 	/**
 	 * Get a map object
 	 *
-	 * @param null|WP_Post|WP_Query|Stellar_Places_Place_Model $args
+	 * @param null|WP_Post|WP_Query|Stellar_Places_Place_Model $args The arguments.
 	 *
 	 * @return Stellar_Places_Google_Map
 	 */
@@ -308,7 +325,7 @@ final class Stellar_Places {
 	 * NOTE: Technically, this is just a dynamic map made to behave as a static map.  This approach allows the map to be
 	 * responsive as opposed to using the Google Static Maps API.
 	 *
-	 * @param Stellar_Places_Place_Model $place
+	 * @param Stellar_Places_Place_Model $place The place model.
 	 *
 	 * @return Stellar_Places_Google_Map
 	 */
@@ -336,17 +353,17 @@ final class Stellar_Places {
 	/**
 	 * Get the excerpt for a WP_Post by post ID.
 	 *
-	 * @param int $post_id
+	 * @param int $post_id The post ID.
 	 *
 	 * @return string
 	 */
 	public static function get_excerpt_by_id( $post_id = 0 ) {
 		global $post;
 		$save_post = $post;
-		$post      = get_post( $post_id );
+		$post      = get_post( $post_id ); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 		setup_postdata( $post );
 		$excerpt = get_the_excerpt();
-		$post    = $save_post;
+		$post    = $save_post; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 		wp_reset_postdata();
 
 		return $excerpt;
@@ -355,8 +372,8 @@ final class Stellar_Places {
 	/**
 	 * Set the Google Maps API key for our Google Maps scripts
 	 *
-	 * @param string $src
-	 * @param string $handle
+	 * @param string $src    The source.
+	 * @param string $handle The handle name.
 	 *
 	 * @return string
 	 */
@@ -365,7 +382,7 @@ final class Stellar_Places {
 		$api_key = get_option( 'stellar_places_google_maps_api_key' );
 		$handles = array( 'google-maps-js-api', 'google-maps-js-api-places-library' );
 
-		if ( $api_key && in_array( $handle, $handles ) ) {
+		if ( $api_key && in_array( $handle, $handles, true ) ) {
 			$src = esc_url_raw( add_query_arg( 'key', $api_key, $src ) );
 		}
 

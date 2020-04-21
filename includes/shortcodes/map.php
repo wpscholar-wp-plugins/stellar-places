@@ -8,7 +8,7 @@ class Stellar_Places_Map_Shortcode {
 	/**
 	 * Shortcode callback
 	 *
-	 * @param array $atts
+	 * @param array $atts Shortcode attributes.
 	 *
 	 * @return string
 	 */

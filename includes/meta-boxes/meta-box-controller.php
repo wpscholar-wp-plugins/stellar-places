@@ -22,8 +22,8 @@ class Stellar_Places_Meta_Box_Controller {
 	/**
 	 * Setup the controller properties and initiate a listener for post save / update actions
 	 *
-	 * @param Stellar_Places_Meta_Box_Model $model
-	 * @param callable                      $callback
+	 * @param Stellar_Places_Meta_Box_Model $model    Meta box model.
+	 * @param callable                      $callback Callable.
 	 */
 	public function __construct( Stellar_Places_Meta_Box_Model $model, $callback ) {
 		$this->model = $model;
@@ -37,8 +37,8 @@ class Stellar_Places_Meta_Box_Controller {
 	/**
 	 * Verify that the user is saving and has proper permissions before handing off saving to the callback
 	 *
-	 * @param int     $post_id
-	 * @param WP_Post $post
+	 * @param int     $post_id The post ID.
+	 * @param WP_Post $post    The post object.
 	 */
 	public function save_post( $post_id, WP_Post $post ) {
 		// Make sure this is a $_POST action and validate that the required nonce name is set
