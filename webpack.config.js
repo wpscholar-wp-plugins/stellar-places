@@ -1,16 +1,6 @@
 'use strict';
 
-/*
-npm i -D @babel/core @wordpress/babel-plugin-makepot @wordpress/babel-preset-default @wordpress/browserslist-config autoprefixer babel-loader babel-plugin-transform-class-properties css-loader mini-css-extract-plugin postcss-loader sass-loader webpack webpack-cli
-
-"scripts": {
-	  "build": "webpack -p",
-	  "start": "webpack --watch"
-  },
-*/
-
 const autoprefixer = require('autoprefixer');
-const browsers = require('@wordpress/browserslist-config');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 const webpack = require('webpack');
@@ -18,8 +8,11 @@ const webpack = require('webpack');
 module.exports = function (env, options) {
 
 	const entry = {
-		main: [
+		'stellar-places-map': [
 			'./src/js/stellar-places-map.js',
+		],
+		'jquery.geoComplete': [
+			'./src/js/jquery.geocomplete.js',
 		],
 		styles: [
 			'./src/css/stellar-places.css',
@@ -50,7 +43,6 @@ module.exports = function (env, options) {
 			options: {
 				plugins: [
 					autoprefixer({
-						browsers,
 						flexbox: 'no-2009',
 					}),
 				],
@@ -65,7 +57,7 @@ module.exports = function (env, options) {
 		},
 	};
 
-	const config = {
+	return {
 		mode,
 		entry,
 		output: {
@@ -202,7 +194,5 @@ module.exports = function (env, options) {
 		},
 		devtool: 'source-map',
 	};
-
-	return config;
 
 };
