@@ -5,7 +5,7 @@ Tags: map, maps, places, location, geolocation, geo, google maps
 Requires at least: 5.2
 Tested up to: 5.4
 Requires PHP: 5.6
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -147,6 +147,9 @@ Absolutely.  There is an `/includes/templates` directory in the plugin that cont
 
 == Changelog ==
 
+= 1.1.2 =
+* Fixed issue with plugin build.
+
 = 1.1.1 =
 * Minor code updates and fixes.
 * Updated "Tested up to" to WordPress version 5.4
@@ -221,3 +224,6 @@ Implemented REST API support.
 
 = 1.1.1 =
 Minor code updates and fixes.
+
+= 1.1.2 =
+Fixed an issue with the plugin build.

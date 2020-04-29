@@ -5,6 +5,7 @@
 .github
 .wporg
 node_modules
+src
 
 # Files
 .distignore
@@ -22,6 +23,7 @@ phpunit.xml.dist
 readme.md
 README.md
 wp-cli.local.yml
+webpack.config.js
 
 # File Types
 *.log

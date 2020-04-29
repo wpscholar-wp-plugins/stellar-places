@@ -14,7 +14,7 @@
   "scripts": {
     "build": "webpack -p",
     "i18n": "wpi18n addtextdomain && wpi18n makepot",
-    "lint": "npx yamllint **/*.yml",
+    "lint": "yamllint **/*.yml --ignore=node_modules/**",
     "start": "webpack --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -55,10 +55,10 @@
   },
   "lint-staged": {
     "**/*.yml": [
-      "npm run lint"
+      "yamllint --ignore=node_modules/**"
     ],
     "**/*.php": [
-      "composer run-script lint"
+      "vendor/bin/phpcs --standard=WPScholar -s"
     ]
   }
 }
