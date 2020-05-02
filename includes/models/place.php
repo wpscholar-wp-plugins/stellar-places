@@ -97,6 +97,13 @@ class Stellar_Places_Place_Model {
 	public $taxonomies = array();
 
 	/**
+	 * Google Marker icon.
+	 *
+	 * @var string
+	 */
+	public $icon = 'https://maps.google.com/mapfiles/ms/icons/red-dot.png';
+
+	/**
 	 * Populate class from an array
 	 *
 	 * @param array $args Initialization arguments.
