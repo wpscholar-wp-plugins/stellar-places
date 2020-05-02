@@ -5,7 +5,7 @@ Tags: map, maps, places, location, geolocation, geo, google maps
 Requires at least: 5.2
 Tested up to: 5.4
 Requires PHP: 5.6
-Stable tag: 1.1.2
+Stable tag: 1.1.3
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -137,6 +137,10 @@ The Stellar Places plugin uses templates to control what appears in these areas.
 
 Absolutely.  There is an `/includes/templates` directory in the plugin that contains a file called `info-window.html`. This file contains all of the code used to render the content of the popups.  You can create a `/stellar-places` directory in your theme and copy over the `info-window.html` file and edit it to fit your needs. The file uses the Underscore.js template engine and is a client-side template.
 
+= Can I create a custom location based query? =
+
+Yes! [Take a look at some examples](https://github.com/wp-forge/wp-geo-query#usage)
+
 == Screenshots ==
 
 1. Admin section adding a location and pulling the data from Google Maps
@@ -146,6 +150,9 @@ Absolutely.  There is an `/includes/templates` directory in the plugin that cont
 5. The front end on an iPhone showing how the map is by default responsive
 
 == Changelog ==
+
+= 1.1.3 =
+* Added support for custom location-based queries.
 
 = 1.1.2 =
 * Fixed issue with plugin build.
@@ -227,3 +234,6 @@ Minor code updates and fixes.
 
 = 1.1.2 =
 Fixed an issue with the plugin build.
+
+= 1.1.3 =
+Added support for custom location-based queries.

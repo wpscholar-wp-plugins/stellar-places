@@ -5,7 +5,7 @@
  * Description: An intuitive plugin for easily creating, managing and displaying locations using Google Maps.
  * Author: Micah Wood
  * Author URI: https://wpscholar.com
- * Version: 1.1.2
+ * Version: 1.1.3
  * Requires at least: 5.2
  * Requires PHP: 5.6
  * Text Domain: stellar-places
@@ -18,7 +18,7 @@
  * @package StellarPlaces
  */
 
-define( 'STELLAR_PLACES_VERSION', '1.1.2' );
+define( 'STELLAR_PLACES_VERSION', '1.1.3' );
 define( 'STELLAR_PLACES_FILE', __FILE__ );
 
 require dirname( __FILE__ ) . '/vendor/autoload.php';
