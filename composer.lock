@@ -4,8 +4,47 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b65c67a37df990ead419661709fb8bc4",
+    "content-hash": "a907c5cafaa4e060336444fa79bee1b9",
     "packages": [
+        {
+            "name": "wp-forge/wp-geo-query",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wp-forge/wp-geo-query.git",
+                "reference": "33e4d0927162ef4e58e36a5228891c267578bb90"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wp-forge/wp-geo-query/zipball/33e4d0927162ef4e58e36a5228891c267578bb90",
+                "reference": "33e4d0927162ef4e58e36a5228891c267578bb90",
+                "shasum": ""
+            },
+            "require-dev": {
+                "wpscholar/phpcs-standards-wpscholar": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "WP_Forge\\GeoQuery\\": "source/"
+                },
+                "files": [
+                    "source/bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Micah Wood",
+                    "email": "micah@wpscholar.com"
+                }
+            ],
+            "description": "Perform location based searches in WordPress.",
+            "time": "2020-05-02T13:24:19+00:00"
+        },
         {
             "name": "wp-forge/wp-plugin-check",
             "version": "1.0",

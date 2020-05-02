@@ -21,6 +21,7 @@
     "lint": "Check files against coding standards."
   },
   "require": {
-    "wp-forge/wp-plugin-check": "^1.0"
+    "wp-forge/wp-plugin-check": "^1.0",
+    "wp-forge/wp-geo-query": "^1.0"
   }
 }
