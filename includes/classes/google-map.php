@@ -48,6 +48,13 @@ class Stellar_Places_Google_Map {
 	public $longitude = 0;
 
 	/**
+	 * Map option: autoCenter
+	 *
+	 * @var bool
+	 */
+	public $autoCenter = true;
+
+	/**
 	 * Map option: autoZoom
 	 *
 	 * @var bool
@@ -181,6 +188,7 @@ class Stellar_Places_Google_Map {
 			)
 		);
 		$style       = "width: {$this->width}; height: {$this->height};";
+		$autoCenter  = filter_var( $this->autoCenter, FILTER_VALIDATE_BOOLEAN ) ? 'true' : 'false';
 		$autoZoom    = filter_var( $this->autoZoom, FILTER_VALIDATE_BOOLEAN ) ? 'true' : 'false';
 		$infoWindows = filter_var( $this->infoWindows, FILTER_VALIDATE_BOOLEAN ) ? 'true' : 'false';
 		$mapOptions  = array_filter( $this->mapOptions, array( $this, 'is_not_null' ) );
@@ -202,6 +210,7 @@ class Stellar_Places_Google_Map {
 			id="<?php echo esc_attr( $this->id ); ?>"
 			class="<?php echo esc_attr( $class ); ?>"
 			style="<?php echo esc_attr( $style ); ?>"
+			data-stellar-places-map-auto-center="<?php echo esc_attr( $autoCenter ); ?>"
 			data-stellar-places-map-auto-zoom="<?php echo esc_attr( $autoZoom ); ?>"
 			data-stellar-places-map-info-windows="<?php echo esc_attr( $infoWindows ); ?>"
 			data-stellar-places-map-lat="<?php echo esc_attr( $this->latitude ); ?>"
