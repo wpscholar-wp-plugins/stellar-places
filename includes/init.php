@@ -177,7 +177,7 @@ final class Stellar_Places {
 		);
 		wp_register_script(
 			'stellar-places-geocomplete',
-			plugins_url( "/assets/js/jquery.geocomplete{$suffix}.js", STELLAR_PLACES_FILE ),
+			plugins_url( "/assets/js/jquery.geoComplete{$suffix}.js", STELLAR_PLACES_FILE ),
 			array( 'jquery', 'google-maps-js-api-places-library' ),
 			STELLAR_PLACES_VERSION,
 			true
