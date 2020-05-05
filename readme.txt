@@ -5,7 +5,7 @@ Tags: map, maps, places, location, geolocation, geo, google maps
 Requires at least: 5.2
 Tested up to: 5.4
 Requires PHP: 5.6
-Stable tag: 1.1.3
+Stable tag: 1.1.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -151,6 +151,9 @@ Yes! [Take a look at some examples](https://github.com/wp-forge/wp-geo-query#usa
 
 == Changelog ==
 
+= 1.1.4 =
+* Fix issue where file name case was causing a 404.
+
 = 1.1.3 =
 * Added support for custom location-based queries.
 
@@ -237,3 +240,6 @@ Fixed an issue with the plugin build.
 
 = 1.1.3 =
 Added support for custom location-based queries.
+
+= 1.1.4 =
+Fix issue where geo-coding wasn't working.
