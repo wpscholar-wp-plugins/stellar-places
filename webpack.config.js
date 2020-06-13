@@ -14,7 +14,7 @@ module.exports = function (env, options) {
 		'jquery.geoComplete': [
 			'./src/js/jquery.geocomplete.js',
 		],
-		styles: [
+		'stellar-places': [
 			'./src/css/stellar-places.css',
 		],
 	};
