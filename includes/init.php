@@ -257,7 +257,7 @@ final class Stellar_Places {
 			// Details
 			$place->name        = get_the_title( $post );
 			$place->description = apply_filters( 'stellar_places_description', self::get_excerpt_by_id( $post->ID ) );
-			$place->url         = get_permalink( $post );
+			$place->url         = apply_filters( 'stellar_places_url', get_permalink( $post ), $post->ID );
 			// Thumbnail URL
 			if ( has_post_thumbnail( $post->ID ) ) {
 				$image_size = apply_filters( 'stellar_places_image_size', 'thumbnail' );
