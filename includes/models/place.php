@@ -101,7 +101,7 @@ class Stellar_Places_Place_Model {
 	 *
 	 * @var string
 	 */
-	public $icon = 'https://maps.google.com/mapfiles/ms/icons/red-dot.png';
+	public $icon;
 
 	/**
 	 * Populate class from an array
