@@ -260,7 +260,7 @@ final class Stellar_Places {
 			$place->url         = apply_filters( 'stellar_places_url', get_permalink( $post ), $post->ID );
 			// Thumbnail URL
 			if ( has_post_thumbnail( $post->ID ) ) {
-				$image_size = apply_filters( 'stellar_places_image_size', 'thumbnail' );
+				$image_size = apply_filters( 'stellar_places_image_size', 'thumbnail', $post->ID );
 				$image      = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $image_size );
 				if ( ! empty( $image[0] ) ) {
 					$place->image = $image[0];
