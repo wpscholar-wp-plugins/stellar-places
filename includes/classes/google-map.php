@@ -237,6 +237,7 @@ class Stellar_Places_Google_Map {
 		if ( empty( $template ) ) {
 			$template = dirname( STELLAR_PLACES_FILE ) . '/includes/templates/info-window.html';
 		}
+		$template = apply_filters( 'stellar_places_info_window_template_path', $template );
 		echo '<script type="text/template" id="stellar-places-info-window-template">';
 		echo file_get_contents( $template ); // phpcs:ignore
 		echo '</script>';
