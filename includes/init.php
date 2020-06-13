@@ -20,6 +20,7 @@ final class Stellar_Places {
 	protected static $class_map = array(
 		'Stellar_Places_Content_Prepender'   => '/classes/content-prepender.php',
 		'Stellar_Places_Context'             => '/classes/context.php',
+		'Stellar_Places_Custom_Icon_Suport'  => '/support/custom-icon.php',
 		'Stellar_Places_Google_Map'          => '/classes/google-map.php',
 		'Stellar_Places_Google_Static_Map'   => '/classes/google-static-map.php',
 		'Stellar_Places_Location_Category'   => '/taxonomies/location-category.php',
@@ -64,6 +65,7 @@ final class Stellar_Places {
 		add_action( 'init', array( $this, 'register_resources' ) );
 
 		add_action( 'init', array( 'Stellar_Places_Location_Support', 'initialize' ) );
+		add_action( 'init', array( 'Stellar_Places_Custom_Icon_Suport', 'initialize' ) );
 
 		add_shortcode( 'stellar_places_map', array( 'Stellar_Places_Map_Shortcode', 'shortcode' ) );
 
@@ -258,6 +260,8 @@ final class Stellar_Places {
 			$place->name        = get_the_title( $post );
 			$place->description = apply_filters( 'stellar_places_description', self::get_excerpt_by_id( $post->ID ) );
 			$place->url         = apply_filters( 'stellar_places_url', get_permalink( $post ), $post->ID );
+			// Icon
+			$place->icon = Stellar_Places_Custom_Icon_Suport::get_icon( $post->ID );
 			// Thumbnail URL
 			if ( has_post_thumbnail( $post->ID ) ) {
 				$image_size = apply_filters( 'stellar_places_image_size', 'thumbnail', $post->ID );
