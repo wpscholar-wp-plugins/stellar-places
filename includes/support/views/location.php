@@ -1,5 +1,5 @@
 <script>
-	(function ( doc, $ ) {
+	(function (doc, $) {
 		$(doc).ready(
 			function () {
 
@@ -15,7 +15,7 @@
 					}
 				};
 
-				if ( lat && lng ) {
+				if (lat && lng) {
 					var latLng = new google.maps.LatLng(lat, lng);
 					options.mapOptions = {center: latLng};
 					options.markerOptions.position = latLng;
@@ -25,11 +25,11 @@
 
 				$el.geocomplete(options)
 					.bind(
-					"geocode:dragged", function ( event, latLng ) {
-						$('input[data-geo=lat]').val(latLng.lat());
-						$('input[data-geo=lng]').val(latLng.lng());
-					}
-				);
+						"geocode:dragged", function (event, latLng) {
+							$('input[data-geo=lat]').val(latLng.lat());
+							$('input[data-geo=lng]').val(latLng.lng());
+						}
+					);
 
 				$('.stellar-places-trigger-geocode').click(
 					function () {
