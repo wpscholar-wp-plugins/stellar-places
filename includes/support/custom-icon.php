@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Class Stellar_Places_Custom_Icon_Suport
+ * Class Stellar_Places_Custom_Icon_Support
  */
-class Stellar_Places_Custom_Icon_Suport {
+class Stellar_Places_Custom_Icon_Support {
 
 	/**
 	 * Initialize the custom icon functionality.
