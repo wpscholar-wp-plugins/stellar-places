@@ -1,15 +1,15 @@
 <?php
 
 /**
- * Class Stellar_Places_Custom_Icon_Suport
+ * Class Stellar_Places_Custom_Icon_Support
  */
-class Stellar_Places_Custom_Icon_Suport {
+class Stellar_Places_Custom_Icon_Support {
 
 	/**
 	 * Initialize the custom icon functionality.
 	 */
 	public static function initialize() {
-		add_filter( 'stellar_places_icon', array( __CLASS__, 'category_icon' ), 8, 2 );
+		add_filter( 'stellar_places_icon', array( __CLASS__, 'category_icon' ), 7, 2 );
 		add_filter( 'stellar_places_icon', array( __CLASS__, 'post_icon' ), 9, 2 );
 
 		if ( is_admin() ) {

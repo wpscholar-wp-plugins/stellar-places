@@ -26,7 +26,7 @@ if ( isset( $_GET['taxonomy'], $_GET['tag_ID'] ) ) { // phpcs:ignore
 		name="_stlr_places_custom_icon"
 	>
 		<option value=""><?php esc_html_e( 'Default', 'stellar-places' ); ?></option>
-		<?php foreach ( Stellar_Places_Custom_Icon_Suport::available_icons() as $icon ) : ?>
+		<?php foreach ( Stellar_Places_Custom_Icon_Support::available_icons() as $icon ) : ?>
 			<option
 				data-img-src="<?php echo esc_url( $icon ); ?>"
 				value="<?php echo esc_url( $icon ); ?>"
