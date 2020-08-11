@@ -184,7 +184,7 @@ class Stellar_Places_Custom_Icon_Support {
 			$icons[] = "{$base_url}{$name}{$extension}";
 		}
 
-		return $icons;
+		return apply_filters( 'stellar_places_available_icons', $icons );
 	}
 
 	/**
