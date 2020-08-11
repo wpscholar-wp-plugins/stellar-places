@@ -1,20 +1,21 @@
 {
   "name": "stellar-places",
   "description": "An intuitive WordPress plugin for easily creating, managing and displaying locations using Google Maps.",
+  "author": "Micah Wood <micah@wpscholar.com> (https://wpscholar.com)",
+  "license": "GPL-2.0-or-later",
   "private": true,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wpscholar/stellar-places.git"
   },
-  "author": "Micah Wood <micah@wpscholar.com> (https://wpscholar.com)",
   "bugs": {
     "url": "https://github.com/wpscholar/stellar-places/issues"
   },
   "homepage": "https://github.com/wpscholar/stellar-places",
   "scripts": {
     "build": "webpack -p",
-    "i18n": "wpi18n addtextdomain && wpi18n makepot",
-    "lint": "yamllint **/*.yml --ignore=node_modules/**",
+    "i18n": "wpi18n addtextdomain && composer run i18n",
+    "lint": "yamllint --ignore=node_modules/** **/*.yml",
     "start": "webpack --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -42,7 +43,7 @@
   ],
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged && npx wpi18n addtextdomain && composer run i18n"
     }
   },
   "lint-staged": {
@@ -50,7 +51,7 @@
       "yamllint --ignore=node_modules/**"
     ],
     "**/*.php": [
-      "vendor/bin/phpcs --standard=WPScholar -s"
+      "vendor/bin/phpcs -s"
     ]
   }
 }

@@ -2,26 +2,35 @@
   "name": "wpscholar/stellar-places",
   "description": "Stellar Places is an intuitive plugin for easily creating, managing and displaying locations using Google Maps.",
   "type": "wordpress-plugin",
-  "license": "GPL-3.0",
+  "license": "GPL-2.0-or-later",
   "authors": [
     {
       "name": "Micah Wood",
       "homepage": "https://wpscholar.com"
     }
   ],
-  "require-dev": {
-    "wpscholar/phpcs-standards-wpscholar": "@stable"
-  },
-  "scripts": {
-    "fix": "vendor/bin/phpcbf . -s",
-    "lint": "vendor/bin/phpcs . -s"
-  },
-  "scripts-descriptions": {
-    "fix": "Automatically fix coding standards issues where possible.",
-    "lint": "Check files against coding standards."
-  },
   "require": {
     "wp-forge/wp-plugin-check": "^1.0",
     "wp-forge/wp-geo-query": "^1.0"
+  },
+  "require-dev": {
+    "wpscholar/phpcs-standards-wpscholar": "@stable",
+    "wp-cli/wp-cli-bundle": "@stable"
+  },
+  "scripts": {
+    "fix": [
+      "vendor/bin/phpcbf ."
+    ],
+    "i18n": [
+      "vendor/bin/wp i18n make-pot . ./languages/stellar-places.pot --headers='{\"POT-Creation-Date\":null}' --exclude=assets"
+    ],
+    "lint": [
+      "vendor/bin/phpcs . -s"
+    ]
+  },
+  "scripts-descriptions": {
+    "fix": "Automatically fix coding standards issues where possible.",
+    "i18n": "Generate a .pot file for translation.",
+    "lint": "Check files against coding standards."
   }
 }
