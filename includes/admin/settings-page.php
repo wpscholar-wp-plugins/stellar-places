@@ -37,7 +37,12 @@ class Stellar_Places_Settings_Page {
 		add_settings_section(
 			'google_maps_api',
 			__( 'Google Maps API', 'stellar-places' ),
-			'__return_false',
+			function () {
+				printf(
+					'<p>%s</p>',
+					esc_html__( 'This plugin requires the use of the Google Maps JavaScript, Places, and Geolocation APIs.', 'stellar-places' )
+				);
+			},
 			'stellar-places-settings'
 		);
 
@@ -49,7 +54,14 @@ class Stellar_Places_Settings_Page {
 			'google_maps_api',
 			array(
 				'name'        => 'stellar_places_google_maps_api_key',
-				'description' => 'Use of Google Maps requires an API key. For most use cases, this is free to setup. <a href="https://console.developers.google.com/flows/enableapi?apiid=maps_backend,static_maps_backend,geocoding_backend,directions_backend,distance_matrix_backend,elevation_backend,roads,street_view_image_backend,maps_embed_backend,places_backend,geolocation,timezone_backend,maps_android_backend,maps_ios_backend,placesandroid,placesios&keyType=CLIENT_SIDE&reusekey=true" target="_blank">Get a key</a> now, or read more about <a href="https://developers.google.com/maps/documentation/javascript/get-api-key" target="_blank">authentication</a> and <a href="https://developers.google.com/maps/pricing-and-plans/" target="_blank">pricing</a>.',
+				'description' => sprintf(
+				/* translators: %1$s is the opening HTML tag for the API set up link, %2$s is the opening tag for the API documentation, %3$s is the opening tag for the API pricing, %4$s is the closing HTML link tag */
+					esc_html__( 'Use of Google Maps requires an API key. For most use cases, this is free to setup. %1$sGet a key%4$s now, or read more about %2$sauthentication%4$s and %3$spricing%4$s.', 'stellar-places' ),
+					'<a href="' . esc_url( 'https://console.developers.google.com/flows/enableapi?apiid=maps_backend,places_backend,geolocation&keyType=CLIENT_SIDE&reusekey=true' ) . ' target="_blank" rel="noopener noreferrer">',
+					'<a href="' . esc_url( 'https://developers.google.com/maps/documentation/javascript/get-api-key' ) . ' target="_blank" rel="noopener noreferrer">',
+					'<a href="' . esc_url( 'https://developers.google.com/maps/pricing-and-plans/' ) . ' target="_blank" rel="noopener noreferrer">',
+					'</a>'
+				),
 			)
 		);
 
@@ -69,7 +81,8 @@ class Stellar_Places_Settings_Page {
 			value="<?php echo esc_attr( get_option( $args['name'] ) ); ?>"
 		/>
 		<?php if ( isset( $args['description'] ) ) { ?>
-			<p class="description"><?php echo $args['description']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+			<p
+				class="description"><?php echo $args['description']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 			<?php
 		}
 	}
