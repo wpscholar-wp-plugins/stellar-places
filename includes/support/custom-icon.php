@@ -39,7 +39,7 @@ class Stellar_Places_Custom_Icon_Support {
 	 * @return string
 	 */
 	public static function default_icon() {
-		return apply_filters( 'stellar_places_default_icon', 'https://maps.google.com/mapfiles/ms/icons/red-dot.png' );
+		return apply_filters( 'stellar_places_default_icon', get_option( 'stellar_places_default_map_icon', 'https://maps.google.com/mapfiles/ms/icons/red-dot.png' ) );
 	}
 
 	/**

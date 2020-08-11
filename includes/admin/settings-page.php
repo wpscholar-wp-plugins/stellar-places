@@ -33,10 +33,11 @@ class Stellar_Places_Settings_Page {
 	public static function settings_init() {
 
 		register_setting( 'stellar-places-settings', 'stellar_places_google_maps_api_key', 'sanitize_text_field' );
+		register_setting( 'stellar-places-settings', 'stellar_places_default_map_icon', 'esc_url_raw' );
 
 		add_settings_section(
-			'google_maps_api',
-			__( 'Google Maps API', 'stellar-places' ),
+			'stellar-general-settings',
+			__( 'General Settings', 'stellar-places' ),
 			function () {
 				printf(
 					'<p>%s</p>',
@@ -51,7 +52,7 @@ class Stellar_Places_Settings_Page {
 			__( 'Google Maps API Key', 'stellar-places' ),
 			array( __CLASS__, 'text_field' ),
 			'stellar-places-settings',
-			'google_maps_api',
+			'stellar-general-settings',
 			array(
 				'name'        => 'stellar_places_google_maps_api_key',
 				'description' => sprintf(
@@ -63,6 +64,14 @@ class Stellar_Places_Settings_Page {
 					'</a>'
 				),
 			)
+		);
+
+		add_settings_field(
+			'default-map-icon',
+			__( 'Default Map Icon', 'stellar-places' ),
+			array( 'Stellar_Places_Custom_Icon_Support', 'render_picker' ),
+			'stellar-places-settings',
+			'stellar-general-settings'
 		);
 
 	}
