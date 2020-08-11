@@ -42,15 +42,28 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: includes/admin/settings-page.php:39
-msgid "Google Maps API"
+#: includes/admin/settings-page.php:40
+msgid "General Settings"
 msgstr ""
 
-#: includes/admin/settings-page.php:46
+#: includes/admin/settings-page.php:44
+msgid "This plugin requires the use of the Google Maps JavaScript, Places, and Geolocation APIs."
+msgstr ""
+
+#: includes/admin/settings-page.php:52
 msgid "Google Maps API Key"
 msgstr ""
 
-#: includes/admin/settings-page.php:84
+#. translators: %1$s is the opening HTML tag for the API set up link, %2$s is the opening tag for the API documentation, %3$s is the opening tag for the API pricing, %4$s is the closing HTML link tag
+#: includes/admin/settings-page.php:60
+msgid "Use of Google Maps requires an API key. For most use cases, this is free to setup. %1$sGet a key%4$s now, or read more about %2$sauthentication%4$s and %3$spricing%4$s."
+msgstr ""
+
+#: includes/admin/settings-page.php:71
+msgid "Default Map Icon"
+msgstr ""
+
+#: includes/admin/settings-page.php:106
 msgid "Stellar Places Settings"
 msgstr ""
 
@@ -127,11 +140,11 @@ msgstr ""
 msgid "Location"
 msgstr ""
 
-#: includes/support/views/icon-picker.php:20
+#: includes/support/views/icon-picker.php:27
 msgid "Select a custom map icon:"
 msgstr ""
 
-#: includes/support/views/icon-picker.php:28
+#: includes/support/views/icon-picker.php:32
 msgid "Default"
 msgstr ""
 
