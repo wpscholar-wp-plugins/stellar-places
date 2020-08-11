@@ -3,9 +3,9 @@ Contributors: wpscholar
 Donate link: https://www.paypal.me/wpscholar
 Tags: map, maps, places, location, geolocation, geo, google maps
 Requires at least: 5.2
-Tested up to: 5.4.2
+Tested up to: 5.5
 Requires PHP: 5.6
-Stable tag: 1.2
+Stable tag: 1.3
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -151,6 +151,11 @@ Yes! [Take a look at some examples](https://github.com/wp-forge/wp-geo-query#usa
 
 == Changelog ==
 
+= 1.3 =
+* Enhancement: Added ability to set a global custom icon.
+* Security: Updated JavaScript dependencies.
+* Testing: Compatible with WordPress 5.5.
+
 = 1.2 =
 * Added ability to set custom icons on a per-category and per-post basis.
 
@@ -249,3 +254,6 @@ Fix issue where geo-coding wasn't working.
 
 = 1.2 =
 Added ability to set custom icons on a per-category and per-post basis.
+
+= 1.3 =
+Added ability to set a global custom icon.
