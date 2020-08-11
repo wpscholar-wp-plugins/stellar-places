@@ -2,7 +2,7 @@
 # This file is distributed under the GPL3.
 msgid ""
 msgstr ""
-"Project-Id-Version: Stellar Places 1.2\n"
+"Project-Id-Version: Stellar Places 1.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/stellar-places\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
