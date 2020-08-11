@@ -81,7 +81,7 @@ class Stellar_Places_Settings_Page {
 		?>
 		<form action='options.php' method='post'>
 
-			<h1><?php esc_html_e( 'Stellar Places Settings' ); ?></h1>
+			<h1><?php esc_html_e( 'Stellar Places Settings', 'stellar-places' ); ?></h1>
 
 			<?php
 			settings_fields( 'stellar-places-settings' );
